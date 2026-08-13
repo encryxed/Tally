@@ -4,6 +4,8 @@ Point your camera at a receipt. Tally reads the **store**, the **date** and the
 **total**, files it under a category, and adds it to your monthly spend — no
 typing, no account, no subscription.
 
+Fully open source, built by [@encryxed](https://github.com/encryxed).
+
 ## Why it's actually private
 
 The shipped APK has **no `INTERNET` permission**. Not "we promise not to send
@@ -90,3 +92,8 @@ gradle testDebugUnitTest
 
 Kotlin · Jetpack Compose (Material 3) · Room · CameraX · ML Kit text
 recognition (bundled, offline) · minSdk 26
+
+## Licence
+
+[MIT](LICENSE) © [encryxed](https://github.com/encryxed) — free to use, fork
+and modify. If it saves you some typing, a star is appreciated.

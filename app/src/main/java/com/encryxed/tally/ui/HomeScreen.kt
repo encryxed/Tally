@@ -1,6 +1,7 @@
 package com.encryxed.tally.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,7 +38,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -150,9 +153,38 @@ fun HomeScreen(
                     ReceiptRow(receipt = receipt, onClick = { onEdit(receipt) })
                 }
             }
+
+            item(key = "watermark") {
+                Spacer(Modifier.height(16.dp))
+                Watermark()
+            }
         }
     }
 
+}
+
+private const val PROJECT_URL = "https://github.com/encryxed/tally"
+
+/**
+ * Author credit and source link, at the foot of the list and on the empty state.
+ *
+ * Handing a URL to the browser is an intent, not a network call, so this works
+ * fine in an app that holds no INTERNET permission.
+ */
+@Composable
+private fun Watermark(modifier: Modifier = Modifier) {
+    val uriHandler = LocalUriHandler.current
+    Text(
+        text = "Fully open source · built by @encryxed",
+        style = MaterialTheme.typography.labelSmall,
+        color = MaterialTheme.colorScheme.primary,
+        textAlign = TextAlign.Center,
+        textDecoration = TextDecoration.Underline,
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable { uriHandler.openUri(PROJECT_URL) }
+            .padding(vertical = 8.dp),
+    )
 }
 
 @Composable
@@ -473,5 +505,7 @@ private fun EmptyState(modifier: Modifier = Modifier) {
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
+        Spacer(Modifier.height(32.dp))
+        Watermark()
     }
 }
