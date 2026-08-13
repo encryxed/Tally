@@ -163,7 +163,7 @@ fun HomeScreen(
 
 }
 
-private const val PROJECT_URL = "https://github.com/encryxed/tally"
+private const val PROJECT_URL = "https://github.com/encryxed/Tally"
 
 /**
  * Author credit and source link, at the foot of the list and on the empty state.
