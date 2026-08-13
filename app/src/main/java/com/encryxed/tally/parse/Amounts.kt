@@ -132,14 +132,60 @@ private val CURRENCY_SYMBOLS = listOf(
 /** A currency guess, plus whether it was actually printed on the receipt. */
 data class CurrencyGuess(val code: String, val explicit: Boolean)
 
+/**
+ * How near a currency code must sit to an amount before we believe it.
+ *
+ * Real receipts print the currency beside the money — "28.668 JD",
+ * "TOTAL EUR 12,50". Three letters floating anywhere else on a noisy scan are
+ * far more likely to be OCR inventing a word out of a smudge, and a single
+ * hallucinated code otherwise relabels the entire receipt.
+ */
+private const val CODE_PROXIMITY = 12
+
 fun detectCurrencyDetailed(text: String, fallback: String): CurrencyGuess {
-    val upper = text.uppercase()
-    for ((pattern, iso) in CURRENCY_CODES) {
-        if (pattern.containsMatchIn(upper)) return CurrencyGuess(iso, explicit = true)
+    // A printed symbol is the strongest evidence available: unambiguous, and
+    // OCR seldom invents one out of nothing.
+    for (line in text.lineSequence()) {
+        for ((symbol, iso) in CURRENCY_SYMBOLS) {
+            if (line.contains(symbol, ignoreCase = true)) {
+                return CurrencyGuess(iso, explicit = true)
+            }
+        }
     }
-    for ((symbol, iso) in CURRENCY_SYMBOLS) {
-        if (text.contains(symbol, ignoreCase = true)) return CurrencyGuess(iso, explicit = true)
+
+    // Next best: a code printed right beside an amount, as in "28.668 JD".
+    for (line in text.lineSequence()) {
+        val amounts = findMoney(line)
+        if (amounts.isEmpty()) continue
+        val upper = line.uppercase()
+        for ((pattern, iso) in CURRENCY_CODES) {
+            val match = pattern.find(upper) ?: continue
+            val adjacent = amounts.any { money ->
+                val gap = if (money.start >= match.range.last) {
+                    money.start - match.range.last
+                } else {
+                    match.range.first - (money.start + money.raw.length)
+                }
+                gap in 0..CODE_PROXIMITY
+            }
+            if (adjacent) return CurrencyGuess(iso, explicit = true)
+        }
     }
+
+    // Weakest: a code standing alone on a short, tidy line — "JPY", or
+    // "Paid in KD". Plenty of tills print it that way, so it has to count,
+    // but the line must look deliberate. A code buried in a long run of
+    // half-recognised characters is far more likely to be OCR noise, and a
+    // single invented code silently relabels every amount on the receipt.
+    for (line in text.lineSequence()) {
+        val words = line.trim().split(Regex("\\s+")).filter { it.isNotBlank() }
+        if (words.isEmpty() || words.size > 3) continue
+        val upper = line.uppercase()
+        for ((pattern, iso) in CURRENCY_CODES) {
+            if (pattern.containsMatchIn(upper)) return CurrencyGuess(iso, explicit = true)
+        }
+    }
+
     return CurrencyGuess(fallback, explicit = false)
 }
 

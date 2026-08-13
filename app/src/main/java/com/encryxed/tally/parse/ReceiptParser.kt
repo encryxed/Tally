@@ -92,6 +92,9 @@ object ReceiptParser {
         data class Hit(val value: Double, val confidence: Confidence, val index: Int)
 
         val hits = mutableListOf<Hit>()
+        // Whether the receipt named a total at all, regardless of whether we
+        // managed to read the figure beside it.
+        var sawTotalLabel = false
 
         lines.forEachIndexed { index, line ->
             val lower = line.text.lowercase()
@@ -101,6 +104,7 @@ object ReceiptParser {
             // no total word. A line that says both ("TOTAAL INCL. BTW") does,
             // which is exactly what we want.
             if (!hasTotalKeyword(lower)) return@forEachIndexed
+            sawTotalLabel = true
 
             // Prefer a decimal amount on the same line.
             val onLine = findMoney(line.text, decimals).filter { (it.hasDecimals || decimals == 0) && it.value > 0 }
@@ -130,8 +134,17 @@ object ReceiptParser {
             return best.value to best.confidence
         }
 
-        // Nothing labelled. The largest decimal amount in the lower part of the
-        // receipt is the least-bad guess, but flag it as a guess.
+        // The guess below rests on one assumption: that this receipt simply
+        // never labelled its total. If a label *was* found and no amount could
+        // be tied to it, that assumption is false — the amount column did not
+        // survive the photo. Guessing anyway means reaching for some unrelated
+        // number, quite possibly off a second receipt caught in the same frame,
+        // and presenting it as the total. Saying "couldn't read it" is worth
+        // far more to the user than a confident wrong figure.
+        if (sawTotalLabel) return null to Confidence.NONE
+
+        // Nothing labelled at all. The largest decimal amount in the lower part
+        // of the receipt is the least-bad guess, but flag it as a guess.
         val topY = lines.minOf { it.top }
         val bottomY = lines.maxOf { it.bottom }
         val cutoff = topY + (bottomY - topY) * 0.45
