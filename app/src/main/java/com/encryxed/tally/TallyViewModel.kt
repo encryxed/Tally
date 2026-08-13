@@ -84,19 +84,26 @@ class TallyViewModel(app: Application) : AndroidViewModel(app) {
         scanState = ScanState.Reading
         viewModelScope.launch {
             scanState = runCatching {
-                val lines = Ocr.readLines(getApplication(), imageUri)
-                if (lines.isEmpty()) {
+                // The photo is read at all four right-angle rotations and the
+                // best-scoring parse wins. A receipt lying sideways in frame
+                // otherwise defeats every spatial rule the parser relies on.
+                val reads = Ocr.readAllOrientations(getApplication(), imageUri)
+                if (reads.isEmpty()) {
                     discardImage(imagePath)
                     return@runCatching ScanState.Failed(
                         "Couldn't read anything. Try again with more light and the whole receipt in frame."
                     )
                 }
 
-                val parsed = ReceiptParser.parse(
-                    lines = lines,
-                    preferDayFirst = preferDayFirst,
-                    defaultCurrency = defaultCurrency,
-                )
+                val parsed = reads
+                    .map { read ->
+                        ReceiptParser.parse(
+                            lines = read.lines,
+                            preferDayFirst = preferDayFirst,
+                            defaultCurrency = defaultCurrency,
+                        )
+                    }
+                    .maxBy { it.qualityScore }
                 val signature = receiptSignature(parsed.merchant, parsed.rawText)
                 val learned = signature.takeIf { it.isNotEmpty() }?.let { aliasDao.forSignature(it) }
 

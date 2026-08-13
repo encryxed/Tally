@@ -190,28 +190,51 @@ object ReceiptParser {
         val knownZone = lines.filter { (it.centerY - topY) <= pageHeight * 0.60 }
         val headerZone = lines.filter { (it.centerY - topY) <= pageHeight * 0.35 }
 
-        for (line in knownZone) {
-            val lower = line.text.lowercase()
-            // Skip the totals block: a "NET 12,50" line must not become a shop.
-            if (hasTotalKeyword(lower)) continue
-            if (findMoney(line.text, decimals).any { it.hasDecimals }) continue
+        val medianHeight = lines.map { it.height }.sorted()[lines.size / 2].coerceAtLeast(1)
 
-            val norm = normalizeForMatch(repairOcrDigits(stripGreeting(line.text)))
-            if (norm.isEmpty()) continue
+        // Collect *every* chain the page mentions rather than stopping at the
+        // first. A photo of a receipt frequently catches other text too — a
+        // browser tab, a poster on the wall, another receipt on the table —
+        // and in reading order that clutter can easily come first.
+        //
+        // The shop's own name is printed prominently at the head of the
+        // receipt; incidental background text is small. So rank by how large
+        // the text is relative to the rest of the page, and only then by how
+        // specific the matched name was.
+        val hits = buildList {
+            for (line in knownZone) {
+                val lower = line.text.lowercase()
+                // Skip the totals block: a "NET 12,50" line must not become a shop.
+                if (hasTotalKeyword(lower)) continue
+                if (findMoney(line.text, decimals).any { it.hasDecimals }) continue
 
-            SHORT_MERCHANTS[norm]?.let {
-                return Triple(it.display, Confidence.HIGH, it.category)
-            }
-            // Longest key first so "ALBERTHEIJN" beats a shorter accidental hit.
-            val match = KNOWN_MERCHANTS.entries
-                .filter { norm.contains(it.key) }
-                .maxByOrNull { it.key.length }
-            if (match != null) {
-                return Triple(match.value.display, Confidence.HIGH, match.value.category)
+                val norm = normalizeForMatch(repairOcrDigits(stripGreeting(line.text)))
+                if (norm.isEmpty()) continue
+
+                SHORT_MERCHANTS[norm]?.let {
+                    add(MerchantHit(it.display, it.category, line, norm.length))
+                    return@let
+                }
+                // Longest key first so "ALBERTHEIJN" beats a shorter accidental hit.
+                KNOWN_MERCHANTS.entries
+                    .filter { norm.contains(it.key) }
+                    .maxByOrNull { it.key.length }
+                    ?.let { add(MerchantHit(it.value.display, it.value.category, line, it.key.length)) }
             }
         }
 
-        val medianHeight = lines.map { it.height }.sorted()[lines.size / 2].coerceAtLeast(1)
+        if (hits.isNotEmpty()) {
+            val prominent = hits.filter { it.line.height >= medianHeight * 0.6 }
+                .ifEmpty { hits }
+            val best = prominent.maxWith(
+                compareBy(
+                    { it.line.height.toDouble() / medianHeight },
+                    { it.keyLength },
+                    { -it.line.top },
+                )
+            )
+            return Triple(best.display, Confidence.HIGH, best.category)
+        }
 
         // Try the tight header band first. If a logo, a slogan or a run of
         // boilerplate pushed the real name further down, widen the search
@@ -222,6 +245,14 @@ object ReceiptParser {
 
         return Triple(cleanMerchantName(best.text), Confidence.MEDIUM, null)
     }
+
+    /** A known chain spotted somewhere on the page, and how prominently. */
+    private data class MerchantHit(
+        val display: String,
+        val category: Category,
+        val line: OcrLine,
+        val keyLength: Int,
+    )
 
     private fun bestHeaderCandidate(
         zone: List<OcrLine>,

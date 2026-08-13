@@ -67,6 +67,29 @@ data class ParsedReceipt(
     val isComplete: Boolean
         get() = merchant != null && total != null && date != null
 
+    /**
+     * How well-formed this parse looks, used to choose between competing
+     * readings of the same photo — most importantly the four rotations of it.
+     *
+     * Recognised text volume carries most of the weight because it is the
+     * clearest orientation signal: OCR reads far more characters off a page
+     * that is the right way up than off one lying on its side. The field
+     * confidences then break ties between plausible orientations.
+     */
+    val qualityScore: Int
+        get() {
+            fun points(confidence: Confidence) = when (confidence) {
+                Confidence.HIGH -> 6
+                Confidence.MEDIUM -> 3
+                Confidence.LOW -> 1
+                Confidence.NONE -> 0
+            }
+            return rawText.count { it.isLetterOrDigit() } / 20 +
+                points(merchantConfidence) +
+                points(totalConfidence) +
+                points(dateConfidence)
+        }
+
     /** Fields worth asking the user to double-check. */
     val uncertainFields: List<String>
         get() = buildList {
