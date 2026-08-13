@@ -13,8 +13,8 @@ android {
         applicationId = "com.encryxed.tally"
         minSdk = 26
         targetSdk = 35
-        versionCode = 5
-        versionName = "1.4"
+        versionCode = 1
+        versionName = "1.0"
         vectorDrawables { useSupportLibrary = true }
     }
 
