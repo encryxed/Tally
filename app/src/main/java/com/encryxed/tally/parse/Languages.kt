@@ -314,10 +314,19 @@ class LanguagePack(
         /**
          * Word boundaries matter more than they look. "net" is the total on
          * many tills, while the Dutch "netto" is the pre-VAT subtotal and must
-         * not match — `\bnet\b` separates them. The `(?U)` flag makes the
-         * boundary understand accented letters, without which "yhteensä" and
-         * "ödenecek" would not match reliably.
+         * not match — a boundary separates them.
+         *
+         * They are spelled out as Unicode lookarounds rather than `\b` because
+         * `\b` is ASCII-only, so "yhteensä" would fail to match at its final
+         * letter. The JDK offers a `(?U)` flag for exactly this, but **Android
+         * uses ICU for regex and rejects that flag outright**, throwing at
+         * pattern-compile time. Unit tests run on the JVM and so never see it:
+         * this shipped as a crash on every device with a fully green suite.
+         * These lookarounds behave identically on both engines.
          */
+        private const val BEFORE = "(?<![\\p{L}\\p{N}])"
+        private const val AFTER = "(?![\\p{L}\\p{N}])"
+
         fun of(languages: Collection<ReceiptLanguage>): LanguagePack {
             val languageSet = languages.ifEmpty { listOf(ReceiptLanguage.ENGLISH) }
 
@@ -329,7 +338,7 @@ class LanguagePack(
                 .joinToString("|") { Regex.escape(it) }
 
             return LanguagePack(
-                totalPattern = Regex("(?U)\\b(?:$totals)\\b"),
+                totalPattern = Regex("$BEFORE(?:$totals)$AFTER"),
                 vetoWords = languageSet.flatMap { it.vetoWords }.distinct(),
                 // Earlier languages win a prefix clash, so the order the user
                 // enabled them in is respected.
