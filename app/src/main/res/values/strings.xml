@@ -1,4 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Tally</string>
+
+    <!-- Home -->
+    <string name="scan_receipt">Scan receipt</string>
+    <string name="export_csv">Export as CSV</string>
+    <string name="settings">Settings</string>
+    <string name="empty_title">No receipts yet</string>
+    <string name="empty_body">Point the camera at a receipt and Tally fills in the shop, date and total for you.</string>
+    <string name="watermark">Fully open source · built by @encryxed</string>
+    <string name="tap_to_check">tap to check</string>
+    <string name="no_total">no total</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d receipt</item>
+        <item quantity="other">%d receipts</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d receipt needs a quick check — tap the highlighted one below.</item>
+        <item quantity="other">%d receipts need a quick check — tap the highlighted ones below.</item>
+    </plurals>
+
+    <!-- Budget -->
+    <string name="budget_title">Spending budget</string>
+    <string name="budget_body">Tally will track what you\'ve spent against this and warn you before you blow past it.</string>
+    <string name="budget_amount">Amount (%1$s)</string>
+    <string name="budget_weekly">Weekly</string>
+    <string name="budget_monthly">Monthly</string>
+    <string name="budget_on_track">On track</string>
+    <string name="budget_nearly">Nearly there</string>
+    <string name="budget_over">Over budget</string>
+    <string name="set_budget">Set budget</string>
+    <string name="budget_title_short">BUDGET</string>
+    <string name="budget_of">of %1$s</string>
+    <!-- e.g. "12.40 over · 3 days left" -->
+    <string name="budget_over_summary">%1$s over · %2$s</string>
+    <!-- e.g. "38.00 left · 12.60/day for 3 days" -->
+    <string name="budget_left_summary">%1$s left · %2$s/day for %3$s</string>
+    <plurals name="days_left">
+        <item quantity="one">%d day left</item>
+        <item quantity="other">%d days left</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+
+    <!-- Scan -->
+    <string name="fit_receipt">Fit the whole receipt inside the frame</string>
+    <string name="reading_receipt">Reading the receipt…</string>
+    <string name="capture_failed">Capture failed. Try again.</string>
+    <string name="camera_start_failed">Could not start the camera.</string>
+    <string name="camera_needed_title">Camera access needed</string>
+    <string name="camera_needed_body">Tally reads receipts using the camera. Photos stay on this phone — the app has no internet access at all.</string>
+    <string name="camera_denied_body">Tally needs the camera to read receipts. You can enable it in Settings › Apps › Tally › Permissions.</string>
+    <string name="allow_camera">Allow camera</string>
+    <string name="go_back">Go back</string>
+    <string name="back">Back</string>
+    <string name="ocr_found_nothing">Couldn\'t read anything. Try again with more light and the whole receipt in frame.</string>
+    <string name="ocr_failed">Could not read that image.</string>
+
+    <!-- Edit -->
+    <string name="edit_receipt">Edit receipt</string>
+    <string name="delete_receipt">Delete receipt</string>
+    <string name="receipt_photo">Receipt photo</string>
+    <string name="field_store">Store</string>
+    <string name="field_store_hint">Which shop was this?</string>
+    <string name="field_total">Total (%1$s)</string>
+    <string name="field_date">Date</string>
+    <string name="field_category">Category</string>
+    <string name="field_note">Note (optional)</string>
+    <string name="change">Change</string>
+    <string name="save_changes">Save changes</string>
+    <string name="review_hint">Some details couldn\'t be read from this receipt. Fix them here — the shop name gets remembered for next time.</string>
+    <string name="delete_confirm_title">Delete this receipt?</string>
+    <string name="delete_confirm_body">The photo will be removed too. This can\'t be undone.</string>
+
+    <!-- Common -->
+    <string name="saved">Saved</string>
+    <string name="saved_needs_check">Saved — needs a check</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="remove">Remove</string>
+    <string name="ok">OK</string>
+
+    <!-- Categories -->
+    <string name="cat_groceries">Groceries</string>
+    <string name="cat_dining">Food &amp; drink</string>
+    <string name="cat_fuel">Fuel</string>
+    <string name="cat_transport">Transport</string>
+    <string name="cat_health">Health &amp; care</string>
+    <string name="cat_home">Home &amp; DIY</string>
+    <string name="cat_electronics">Electronics</string>
+    <string name="cat_clothing">Clothing</string>
+    <string name="cat_entertainment">Entertainment</string>
+    <string name="cat_other">Other</string>
+
+    <!-- Settings -->
+    <string name="settings_app_language">App language</string>
+    <string name="settings_app_language_hint">What language Tally itself is shown in.</string>
+    <string name="settings_system_default">System default</string>
+    <string name="settings_receipt_languages">Receipt languages</string>
+    <string name="settings_receipt_languages_hint">Which words Tally looks for when finding the total and the date. Turn on the languages your receipts are printed in — more languages means more to match, so leaving off ones you never see makes detection a little sharper.</string>
+    <string name="settings_receipt_languages_none">Pick at least one, otherwise totals can only be guessed at.</string>
+    <string name="settings_currency">Currency</string>
+    <string name="settings_default_currency">Default currency</string>
+    <string name="settings_currency_hint">Tally reads the currency off the receipt when it\'s printed there. This is what it falls back to when it isn\'t — and you can still change it on any single receipt.</string>
+    <string name="settings_date_order">Ambiguous dates</string>
+    <string name="settings_date_order_hint">A date like 03/04 could be March 4th or April 3rd. This decides which to assume when the receipt gives no other clue.</string>
+    <string name="date_order_auto">Follow app language</string>
+    <string name="date_order_day_first">Day first (03/04 = 3 April)</string>
+    <string name="date_order_month_first">Month first (03/04 = 4 March)</string>
+    <string name="settings_ocr_note">Text recognition covers Latin script only, so receipts in Greek, Cyrillic, Chinese, Japanese, Korean or Indic scripts won\'t be read — even though the app itself can be shown in some of those languages.</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_source">Source code and releases</string>
 </resources>

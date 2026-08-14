@@ -52,6 +52,29 @@ key is the parser's *guess*, not the right answer — the same till prints the
 same layout every visit, so a shop that reads wrongly reads wrongly the same
 way each time. Fix it once and every later scan of that shop is correct.
 
+## Languages and currency
+
+Two different settings, because they answer two different questions.
+
+**App language** is what Tally itself is shown in — 21 languages, from the gear
+icon. It is independent of the system language, and not limited to Latin script.
+
+**Receipt languages** are the words the parser hunts for when finding the total
+and the date (`TOTAL`, `TOTAAL`, `GESAMT`, `RAZEM`, `YHTEENSÄ`, …), across 20
+Latin-script languages. Enable the ones your receipts are printed in; leaving
+off languages you never encounter makes detection slightly sharper, since there
+is less to collide with.
+
+Only Latin script is covered here, because that is what the bundled OCR model
+reads. Knowing the Greek for "total" would not help when the recogniser cannot
+see the letters — so the app can be *displayed* in Russian or Ukrainian, but it
+cannot *read* a Cyrillic receipt.
+
+**Currency** is detected from the receipt when it is printed there, falls back
+to a default you set, and remains editable on any individual receipt.
+
+Translations were produced without native review. Corrections are very welcome.
+
 ## Budgets
 
 Set a weekly (Mon–Sun) or monthly (calendar month) cap from the gear icon.

@@ -16,6 +16,7 @@ object ReceiptParser {
         preferDayFirst: Boolean = true,
         defaultCurrency: String = "EUR",
         today: LocalDate = LocalDate.now(),
+        pack: LanguagePack = LanguagePack.ALL,
     ): ParsedReceipt {
         val clean = lines
             .map { it.copy(text = normalizeDigits(it.text).trim().replace(Regex("\\s+"), " ")) }
@@ -43,9 +44,10 @@ object ReceiptParser {
             else -> detectDecimalDigits(rawText)
         }
 
-        val (merchant, merchantConfidence, knownCategory) = findMerchant(clean, decimals)
-        val (total, totalConfidence) = findTotal(clean, decimals)
-        val (date, dateConfidence) = findDate(clean.map { it.text }, preferDayFirst, today)
+        val (merchant, merchantConfidence, knownCategory) = findMerchant(clean, decimals, pack)
+        val (total, totalConfidence) = findTotal(clean, decimals, pack)
+        val (date, dateConfidence) =
+            findDate(clean.map { it.text }, preferDayFirst, today, pack.monthPrefixes)
 
         return ParsedReceipt(
             merchant = merchant,
@@ -63,32 +65,14 @@ object ReceiptParser {
     // ---------------------------------------------------------------- total
 
     /**
-     * Words that mark the line carrying the amount actually paid.
-     *
-     * Matched on word boundaries, which matters more than it looks: "net" is
-     * the total on many Middle-Eastern tills, while the Dutch "NETTO" is the
-     * pre-VAT subtotal and must *not* match. \bnet\b separates them cleanly.
+     * Finds the amount actually paid, using whichever languages the user has
+     * switched on — see [LanguagePack].
      */
-    private val TOTAL_POSITIVE = Regex(
-        """\b(?:grand total|total amount|amount due|balance due|total due""" +
-            """|te betalen|totaal te voldoen|totaal|total|totale""" +
-            """|gesamtbetrag|gesamt|summe|montant|importe|bedrag""" +
-            """|to pay|sum|net)\b"""
-    )
-
-    private fun hasTotalKeyword(lower: String) = TOTAL_POSITIVE.containsMatchIn(lower)
-
-    /** Lines that are never the total, whatever else they say. */
-    private val TOTAL_VETO = listOf(
-        "subtotal", "sub total", "subtotaal", "zwischensumme", "sous-total",
-        "totaal btw", "total vat", "btw totaal", "vat total", "totaal korting",
-        "korting", "discount", "savings", "besparing", "voordeel",
-        "wisselgeld", "change", "terug", "cash", "contant", "kontant",
-        "tip", "fooi", "aantal", "artikelen", "items", "qty", "stuks",
-        "retour", "return", "spaarpunten", "points",
-    )
-
-    private fun findTotal(lines: List<OcrLine>, decimals: Int): Pair<Double?, Confidence> {
+    private fun findTotal(
+        lines: List<OcrLine>,
+        decimals: Int,
+        pack: LanguagePack,
+    ): Pair<Double?, Confidence> {
         data class Hit(val value: Double, val confidence: Confidence, val index: Int)
 
         val hits = mutableListOf<Hit>()
@@ -98,12 +82,12 @@ object ReceiptParser {
 
         lines.forEachIndexed { index, line ->
             val lower = line.text.lowercase()
-            if (TOTAL_VETO.any { lower.contains(it) }) return@forEachIndexed
+            if (pack.isVetoed(lower)) return@forEachIndexed
 
             // A tax-only line like "BTW 21%  5,94" never gets here: it carries
             // no total word. A line that says both ("TOTAAL INCL. BTW") does,
             // which is exactly what we want.
-            if (!hasTotalKeyword(lower)) return@forEachIndexed
+            if (!pack.hasTotalKeyword(lower)) return@forEachIndexed
             sawTotalLabel = true
 
             // Prefer a decimal amount on the same line.
@@ -117,7 +101,7 @@ object ReceiptParser {
             for (offset in 1..2) {
                 val next = lines.getOrNull(index + offset) ?: break
                 val nextLower = next.text.lowercase()
-                if (TOTAL_VETO.any { nextLower.contains(it) }) continue
+                if (pack.isVetoed(nextLower)) continue
                 val below = findMoney(next.text, decimals).filter { (it.hasDecimals || decimals == 0) && it.value > 0 }
                 if (below.isNotEmpty()) {
                     hits += Hit(below.maxOf { it.value }, Confidence.MEDIUM, index)
@@ -193,7 +177,7 @@ object ReceiptParser {
         return String(chars)
     }
 
-    private fun findMerchant(lines: List<OcrLine>, decimals: Int): Triple<String?, Confidence, Category?> {
+    private fun findMerchant(lines: List<OcrLine>, decimals: Int, pack: LanguagePack): Triple<String?, Confidence, Category?> {
         val topY = lines.minOf { it.top }
         val bottomY = lines.maxOf { it.bottom }
         val pageHeight = (bottomY - topY).coerceAtLeast(1)
@@ -218,7 +202,7 @@ object ReceiptParser {
             for (line in knownZone) {
                 val lower = line.text.lowercase()
                 // Skip the totals block: a "NET 12,50" line must not become a shop.
-                if (hasTotalKeyword(lower)) continue
+                if (pack.hasTotalKeyword(lower)) continue
                 if (findMoney(line.text, decimals).any { it.hasDecimals }) continue
 
                 val norm = normalizeForMatch(repairOcrDigits(stripGreeting(line.text)))

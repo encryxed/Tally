@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Beleg scannen</string>
+    <string name="export_csv">Als CSV exportieren</string>
+    <string name="settings">Einstellungen</string>
+    <string name="empty_title">Noch keine Belege</string>
+    <string name="empty_body">Richte die Kamera auf einen Beleg und Tally trägt Geschäft, Datum und Summe für dich ein.</string>
+    <string name="watermark">Vollständig quelloffen · von @encryxed</string>
+    <string name="tap_to_check">zum Prüfen tippen</string>
+    <string name="no_total">keine Summe</string>
+    <string name="budget_title">Ausgabenbudget</string>
+    <string name="budget_body">Tally verfolgt, was du davon ausgegeben hast, und warnt dich, bevor du es überschreitest.</string>
+    <string name="budget_amount">Betrag (%1$s)</string>
+    <string name="budget_weekly">Wöchentlich</string>
+    <string name="budget_monthly">Monatlich</string>
+    <string name="budget_on_track">Im Rahmen</string>
+    <string name="budget_nearly">Fast erreicht</string>
+    <string name="budget_over">Budget überschritten</string>
+    <string name="set_budget">Budget festlegen</string>
+    <string name="budget_title_short">BUDGET</string>
+    <string name="budget_of">von %1$s</string>
+    <string name="budget_over_summary">%1$s darüber · %2$s</string>
+    <string name="budget_left_summary">%1$s übrig · %2$s/Tag für %3$s</string>
+    <string name="fit_receipt">Den ganzen Beleg in den Rahmen bringen</string>
+    <string name="reading_receipt">Beleg wird gelesen…</string>
+    <string name="capture_failed">Aufnahme fehlgeschlagen. Bitte erneut versuchen.</string>
+    <string name="camera_start_failed">Kamera konnte nicht gestartet werden.</string>
+    <string name="camera_needed_title">Kamerazugriff erforderlich</string>
+    <string name="camera_needed_body">Tally liest Belege mit der Kamera. Fotos bleiben auf diesem Telefon — die App hat überhaupt keinen Internetzugriff.</string>
+    <string name="camera_denied_body">Tally braucht die Kamera, um Belege zu lesen. Du kannst sie unter Einstellungen › Apps › Tally › Berechtigungen aktivieren.</string>
+    <string name="allow_camera">Kamera erlauben</string>
+    <string name="go_back">Zurück</string>
+    <string name="back">Zurück</string>
+    <string name="ocr_found_nothing">Es konnte nichts gelesen werden. Versuche es mit mehr Licht und dem ganzen Beleg im Bild.</string>
+    <string name="ocr_failed">Dieses Bild konnte nicht gelesen werden.</string>
+    <string name="edit_receipt">Beleg bearbeiten</string>
+    <string name="delete_receipt">Beleg löschen</string>
+    <string name="receipt_photo">Foto des Belegs</string>
+    <string name="field_store">Geschäft</string>
+    <string name="field_store_hint">Welches Geschäft war das?</string>
+    <string name="field_total">Summe (%1$s)</string>
+    <string name="field_date">Datum</string>
+    <string name="field_category">Kategorie</string>
+    <string name="field_note">Notiz (optional)</string>
+    <string name="change">Ändern</string>
+    <string name="save_changes">Änderungen speichern</string>
+    <string name="review_hint">Einige Angaben konnten von diesem Beleg nicht gelesen werden. Korrigiere sie hier — der Name des Geschäfts wird für das nächste Mal gemerkt.</string>
+    <string name="delete_confirm_title">Diesen Beleg löschen?</string>
+    <string name="delete_confirm_body">Das Foto wird ebenfalls entfernt. Das lässt sich nicht rückgängig machen.</string>
+    <string name="saved">Gespeichert</string>
+    <string name="saved_needs_check">Gespeichert — bitte prüfen</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="save">Speichern</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="delete">Löschen</string>
+    <string name="remove">Entfernen</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Lebensmittel</string>
+    <string name="cat_dining">Essen &amp; Trinken</string>
+    <string name="cat_fuel">Kraftstoff</string>
+    <string name="cat_transport">Verkehr</string>
+    <string name="cat_health">Gesundheit &amp; Pflege</string>
+    <string name="cat_home">Haus &amp; Heimwerken</string>
+    <string name="cat_electronics">Elektronik</string>
+    <string name="cat_clothing">Kleidung</string>
+    <string name="cat_entertainment">Unterhaltung</string>
+    <string name="cat_other">Sonstiges</string>
+    <string name="settings_app_language">App-Sprache</string>
+    <string name="settings_app_language_hint">In welcher Sprache Tally selbst angezeigt wird.</string>
+    <string name="settings_system_default">Systemstandard</string>
+    <string name="settings_receipt_languages">Sprachen der Belege</string>
+    <string name="settings_receipt_languages_hint">Nach welchen Wörtern Tally sucht, um Summe und Datum zu finden. Aktiviere die Sprachen, in denen deine Belege gedruckt sind — mehr Sprachen bedeuten mehr Vergleiche, deshalb schärft das Abschalten nie vorkommender Sprachen die Erkennung etwas.</string>
+    <string name="settings_receipt_languages_none">Wähle mindestens eine, sonst kann die Summe nur geraten werden.</string>
+    <string name="settings_currency">Währung</string>
+    <string name="settings_default_currency">Standardwährung</string>
+    <string name="settings_currency_hint">Tally liest die Währung vom Beleg ab, wenn sie dort steht. Hierauf greift es zurück, wenn nicht — und du kannst sie bei jedem einzelnen Beleg ändern.</string>
+    <string name="settings_date_order">Mehrdeutige Datumsangaben</string>
+    <string name="settings_date_order_hint">Ein Datum wie 03/04 kann der 4. März oder der 3. April sein. Das legt fest, wovon ausgegangen wird, wenn der Beleg keinen weiteren Hinweis gibt.</string>
+    <string name="date_order_auto">Der App-Sprache folgen</string>
+    <string name="date_order_day_first">Tag zuerst (03/04 = 3. April)</string>
+    <string name="date_order_month_first">Monat zuerst (03/04 = 4. März)</string>
+    <string name="settings_ocr_note">Die Texterkennung deckt nur die lateinische Schrift ab. Belege in griechischer, kyrillischer, chinesischer, japanischer, koreanischer oder indischer Schrift werden nicht gelesen — auch wenn die App selbst in einigen dieser Sprachen angezeigt werden kann.</string>
+    <string name="settings_about">Über</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_source">Quellcode und Releases</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d Beleg</item>
+        <item quantity="other">%d Belege</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d Beleg sollte kurz geprüft werden — tippe unten auf den markierten.</item>
+        <item quantity="other">%d Belege sollten kurz geprüft werden — tippe unten auf die markierten.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">noch %d Tag</item>
+        <item quantity="other">noch %d Tage</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d Tag</item>
+        <item quantity="other">%d Tage</item>
+    </plurals>
+</resources>

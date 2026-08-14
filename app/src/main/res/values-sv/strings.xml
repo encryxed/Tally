@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Skanna kvitto</string>
+    <string name="export_csv">Exportera som CSV</string>
+    <string name="settings">Inställningar</string>
+    <string name="empty_title">Inga kvitton än</string>
+    <string name="empty_body">Rikta kameran mot ett kvitto så fyller Tally i butik, datum och summa åt dig.</string>
+    <string name="watermark">Helt öppen källkod · byggd av @encryxed</string>
+    <string name="tap_to_check">tryck för att kontrollera</string>
+    <string name="no_total">ingen summa</string>
+    <string name="budget_title">Utgiftsbudget</string>
+    <string name="budget_body">Tally håller reda på vad du har använt av den och varnar innan du spräcker den.</string>
+    <string name="budget_amount">Belopp (%1$s)</string>
+    <string name="budget_weekly">Veckovis</string>
+    <string name="budget_monthly">Månadsvis</string>
+    <string name="budget_on_track">På rätt spår</string>
+    <string name="budget_nearly">Nästan slut</string>
+    <string name="budget_over">Över budget</string>
+    <string name="set_budget">Ange budget</string>
+    <string name="budget_title_short">BUDGET</string>
+    <string name="budget_of">av %1$s</string>
+    <string name="budget_over_summary">%1$s över · %2$s</string>
+    <string name="budget_left_summary">%1$s kvar · %2$s/dag i %3$s</string>
+    <string name="fit_receipt">Få plats med hela kvittot i ramen</string>
+    <string name="reading_receipt">Läser kvittot…</string>
+    <string name="capture_failed">Bilden misslyckades. Försök igen.</string>
+    <string name="camera_start_failed">Kunde inte starta kameran.</string>
+    <string name="camera_needed_title">Kameraåtkomst behövs</string>
+    <string name="camera_needed_body">Tally läser kvitton med kameran. Bilderna stannar i telefonen — appen har ingen internetåtkomst alls.</string>
+    <string name="camera_denied_body">Tally behöver kameran för att läsa kvitton. Du kan aktivera den i Inställningar › Appar › Tally › Behörigheter.</string>
+    <string name="allow_camera">Tillåt kameran</string>
+    <string name="go_back">Tillbaka</string>
+    <string name="back">Tillbaka</string>
+    <string name="ocr_found_nothing">Kunde inte läsa något. Försök igen med mer ljus och hela kvittot i bild.</string>
+    <string name="ocr_failed">Kunde inte läsa den bilden.</string>
+    <string name="edit_receipt">Redigera kvitto</string>
+    <string name="delete_receipt">Ta bort kvitto</string>
+    <string name="receipt_photo">Foto av kvittot</string>
+    <string name="field_store">Butik</string>
+    <string name="field_store_hint">Vilken butik var det?</string>
+    <string name="field_total">Summa (%1$s)</string>
+    <string name="field_date">Datum</string>
+    <string name="field_category">Kategori</string>
+    <string name="field_note">Anteckning (valfritt)</string>
+    <string name="change">Ändra</string>
+    <string name="save_changes">Spara ändringar</string>
+    <string name="review_hint">Vissa uppgifter kunde inte läsas från det här kvittot. Rätta dem här — butiksnamnet sparas till nästa gång.</string>
+    <string name="delete_confirm_title">Ta bort det här kvittot?</string>
+    <string name="delete_confirm_body">Fotot tas bort också. Det går inte att ångra.</string>
+    <string name="saved">Sparat</string>
+    <string name="saved_needs_check">Sparat — behöver kontroll</string>
+    <string name="edit">Redigera</string>
+    <string name="save">Spara</string>
+    <string name="cancel">Avbryt</string>
+    <string name="delete">Ta bort</string>
+    <string name="remove">Ta bort</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Matvaror</string>
+    <string name="cat_dining">Mat och dryck</string>
+    <string name="cat_fuel">Drivmedel</string>
+    <string name="cat_transport">Transport</string>
+    <string name="cat_health">Hälsa och vård</string>
+    <string name="cat_home">Hem och bygg</string>
+    <string name="cat_electronics">Elektronik</string>
+    <string name="cat_clothing">Kläder</string>
+    <string name="cat_entertainment">Nöje</string>
+    <string name="cat_other">Övrigt</string>
+    <string name="settings_app_language">Appens språk</string>
+    <string name="settings_app_language_hint">Vilket språk Tally själv visas på.</string>
+    <string name="settings_system_default">Systemets standard</string>
+    <string name="settings_receipt_languages">Kvittospråk</string>
+    <string name="settings_receipt_languages_hint">Vilka ord Tally letar efter för att hitta summan och datumet. Slå på de språk dina kvitton är tryckta på — fler språk betyder fler träffar att pröva, så att stänga av dem du aldrig ser gör igenkänningen något skarpare.</string>
+    <string name="settings_receipt_languages_none">Välj minst ett, annars kan summan bara gissas.</string>
+    <string name="settings_currency">Valuta</string>
+    <string name="settings_default_currency">Standardvaluta</string>
+    <string name="settings_currency_hint">Tally läser valutan från kvittot när den står tryckt där. Det här används när den inte gör det — och du kan alltid ändra den på ett enskilt kvitto.</string>
+    <string name="settings_date_order">Tvetydiga datum</string>
+    <string name="settings_date_order_hint">Ett datum som 03/04 kan vara 4 mars eller 3 april. Det här avgör vad som antas när kvittot inte ger någon annan ledtråd.</string>
+    <string name="date_order_auto">Följ appens språk</string>
+    <string name="date_order_day_first">Dag först (03/04 = 3 april)</string>
+    <string name="date_order_month_first">Månad först (03/04 = 4 mars)</string>
+    <string name="settings_ocr_note">Textigenkänningen omfattar bara latinsk skrift, så kvitton på grekiska, kyrilliska, kinesiska, japanska, koreanska eller indiska skriftsystem läses inte — även om appen själv kan visas på några av de språken.</string>
+    <string name="settings_about">Om</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_source">Källkod och utgåvor</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d kvitto</item>
+        <item quantity="other">%d kvitton</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d kvitto behöver en snabb koll — tryck på det markerade nedan.</item>
+        <item quantity="other">%d kvitton behöver en snabb koll — tryck på de markerade nedan.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">%d dag kvar</item>
+        <item quantity="other">%d dagar kvar</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d dag</item>
+        <item quantity="other">%d dagar</item>
+    </plurals>
+</resources>

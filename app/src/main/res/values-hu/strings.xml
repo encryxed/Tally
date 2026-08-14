@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Blokk beolvasása</string>
+    <string name="export_csv">Exportálás CSV-be</string>
+    <string name="settings">Beállítások</string>
+    <string name="empty_title">Még nincs blokk</string>
+    <string name="empty_body">Irányítsd a kamerát egy blokkra, és a Tally kitölti helyetted az üzletet, a dátumot és a végösszeget.</string>
+    <string name="watermark">Teljesen nyílt forráskódú · készítette: @encryxed</string>
+    <string name="tap_to_check">koppints az ellenőrzéshez</string>
+    <string name="no_total">nincs végösszeg</string>
+    <string name="budget_title">Költségkeret</string>
+    <string name="budget_body">A Tally követi, mennyit költöttél belőle, és figyelmeztet, mielőtt túllépnéd.</string>
+    <string name="budget_amount">Összeg (%1$s)</string>
+    <string name="budget_weekly">Heti</string>
+    <string name="budget_monthly">Havi</string>
+    <string name="budget_on_track">Jó úton</string>
+    <string name="budget_nearly">Majdnem elfogyott</string>
+    <string name="budget_over">Keret túllépve</string>
+    <string name="set_budget">Keret beállítása</string>
+    <string name="budget_title_short">KERET</string>
+    <string name="budget_of">ebből: %1$s</string>
+    <string name="budget_over_summary">%1$s túllépés · %2$s</string>
+    <string name="budget_left_summary">%1$s maradt · %2$s/nap %3$s alatt</string>
+    <string name="fit_receipt">Fér bele a teljes blokk a keretbe</string>
+    <string name="reading_receipt">Blokk beolvasása…</string>
+    <string name="capture_failed">A felvétel nem sikerült. Próbáld újra.</string>
+    <string name="camera_start_failed">A kamerát nem sikerült elindítani.</string>
+    <string name="camera_needed_title">Kamerahozzáférés szükséges</string>
+    <string name="camera_needed_body">A Tally kamerával olvassa a blokkokat. A fényképek ezen a telefonon maradnak — az alkalmazásnak egyáltalán nincs internet-hozzáférése.</string>
+    <string name="camera_denied_body">A Tallynak szüksége van a kamerára a blokkok olvasásához. Engedélyezheted itt: Beállítások › Alkalmazások › Tally › Engedélyek.</string>
+    <string name="allow_camera">Kamera engedélyezése</string>
+    <string name="go_back">Vissza</string>
+    <string name="back">Vissza</string>
+    <string name="ocr_found_nothing">Semmit sem sikerült beolvasni. Próbáld újra több fénnyel, a teljes blokkal a képben.</string>
+    <string name="ocr_failed">Ezt a képet nem sikerült beolvasni.</string>
+    <string name="edit_receipt">Blokk szerkesztése</string>
+    <string name="delete_receipt">Blokk törlése</string>
+    <string name="receipt_photo">A blokk fényképe</string>
+    <string name="field_store">Üzlet</string>
+    <string name="field_store_hint">Melyik üzlet volt ez?</string>
+    <string name="field_total">Végösszeg (%1$s)</string>
+    <string name="field_date">Dátum</string>
+    <string name="field_category">Kategória</string>
+    <string name="field_note">Megjegyzés (nem kötelező)</string>
+    <string name="change">Módosítás</string>
+    <string name="save_changes">Módosítások mentése</string>
+    <string name="review_hint">Néhány adatot nem sikerült beolvasni erről a blokkról. Javítsd itt — az üzlet nevét legközelebbre megjegyzi.</string>
+    <string name="delete_confirm_title">Törlöd ezt a blokkot?</string>
+    <string name="delete_confirm_body">A fénykép is törlődik. Ez nem vonható vissza.</string>
+    <string name="saved">Mentve</string>
+    <string name="saved_needs_check">Mentve — ellenőrzést igényel</string>
+    <string name="edit">Szerkesztés</string>
+    <string name="save">Mentés</string>
+    <string name="cancel">Mégse</string>
+    <string name="delete">Törlés</string>
+    <string name="remove">Eltávolítás</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Élelmiszer</string>
+    <string name="cat_dining">Étel és ital</string>
+    <string name="cat_fuel">Üzemanyag</string>
+    <string name="cat_transport">Közlekedés</string>
+    <string name="cat_health">Egészség és ápolás</string>
+    <string name="cat_home">Otthon és barkácsolás</string>
+    <string name="cat_electronics">Elektronika</string>
+    <string name="cat_clothing">Ruházat</string>
+    <string name="cat_entertainment">Szórakozás</string>
+    <string name="cat_other">Egyéb</string>
+    <string name="settings_app_language">Alkalmazás nyelve</string>
+    <string name="settings_app_language_hint">Milyen nyelven jelenik meg maga a Tally.</string>
+    <string name="settings_system_default">Rendszer alapértelmezése</string>
+    <string name="settings_receipt_languages">Blokkok nyelvei</string>
+    <string name="settings_receipt_languages_hint">Milyen szavakat keres a Tally a végösszeg és a dátum megtalálásához. Kapcsold be azokat a nyelveket, amelyeken a blokkjaid nyomtatva vannak — több nyelv több egyeztetést jelent, így a soha nem látottak kikapcsolása kissé pontosabbá teszi a felismerést.</string>
+    <string name="settings_receipt_languages_none">Válassz legalább egyet, különben a végösszeget csak találgatni lehet.</string>
+    <string name="settings_currency">Pénznem</string>
+    <string name="settings_default_currency">Alapértelmezett pénznem</string>
+    <string name="settings_currency_hint">A Tally leolvassa a pénznemet a blokkról, ha az rá van nyomtatva. Ezt használja, ha nincs — és egy adott blokknál bármikor módosíthatod.</string>
+    <string name="settings_date_order">Kétértelmű dátumok</string>
+    <string name="settings_date_order_hint">A 03/04 lehet március 4. vagy április 3. is. Ez dönti el, mit feltételezzen, ha a blokk nem ad más támpontot.</string>
+    <string name="date_order_auto">Az alkalmazás nyelve szerint</string>
+    <string name="date_order_day_first">Először a nap (03/04 = április 3.)</string>
+    <string name="date_order_month_first">Először a hónap (03/04 = március 4.)</string>
+    <string name="settings_ocr_note">A szövegfelismerés csak a latin írást fedi le, így a görög, cirill, kínai, japán, koreai vagy indiai írású blokkokat nem olvassa be — még akkor sem, ha maga az alkalmazás megjeleníthető néhány ilyen nyelven.</string>
+    <string name="settings_about">Névjegy</string>
+    <string name="settings_version">Verzió: %1$s</string>
+    <string name="settings_source">Forráskód és kiadások</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d blokk</item>
+        <item quantity="other">%d blokk</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d blokkot érdemes gyorsan ellenőrizni — koppints az alább kiemeltre.</item>
+        <item quantity="other">%d blokkot érdemes gyorsan ellenőrizni — koppints az alább kiemeltekre.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">%d nap van hátra</item>
+        <item quantity="other">%d nap van hátra</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d nap</item>
+        <item quantity="other">%d nap</item>
+    </plurals>
+</resources>

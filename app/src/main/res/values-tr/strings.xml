@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Fiş tara</string>
+    <string name="export_csv">CSV olarak dışa aktar</string>
+    <string name="settings">Ayarlar</string>
+    <string name="empty_title">Henüz fiş yok</string>
+    <string name="empty_body">Kamerayı bir fişe doğrultun; Tally mağazayı, tarihi ve tutarı sizin için doldursun.</string>
+    <string name="watermark">Tamamen açık kaynak · @encryxed tarafından</string>
+    <string name="tap_to_check">kontrol etmek için dokunun</string>
+    <string name="no_total">tutar yok</string>
+    <string name="budget_title">Harcama bütçesi</string>
+    <string name="budget_body">Tally bu bütçeden ne kadar harcadığınızı izler ve aşmadan önce sizi uyarır.</string>
+    <string name="budget_amount">Tutar (%1$s)</string>
+    <string name="budget_weekly">Haftalık</string>
+    <string name="budget_monthly">Aylık</string>
+    <string name="budget_on_track">Yolunda</string>
+    <string name="budget_nearly">Sınıra yaklaştı</string>
+    <string name="budget_over">Bütçe aşıldı</string>
+    <string name="set_budget">Bütçe belirle</string>
+    <string name="budget_title_short">BÜTÇE</string>
+    <string name="budget_of">/ %1$s</string>
+    <string name="budget_over_summary">%1$s aşım · %2$s</string>
+    <string name="budget_left_summary">%1$s kaldı · %3$s boyunca günde %2$s</string>
+    <string name="fit_receipt">Fişin tamamını çerçeveye sığdırın</string>
+    <string name="reading_receipt">Fiş okunuyor…</string>
+    <string name="capture_failed">Çekim başarısız. Tekrar deneyin.</string>
+    <string name="camera_start_failed">Kamera başlatılamadı.</string>
+    <string name="camera_needed_title">Kamera erişimi gerekli</string>
+    <string name="camera_needed_body">Tally fişleri kamerayla okur. Fotoğraflar bu telefonda kalır — uygulamanın internet erişimi hiç yoktur.</string>
+    <string name="camera_denied_body">Tally fişleri okumak için kameraya ihtiyaç duyar. Ayarlar › Uygulamalar › Tally › İzinler bölümünden açabilirsiniz.</string>
+    <string name="allow_camera">Kameraya izin ver</string>
+    <string name="go_back">Geri dön</string>
+    <string name="back">Geri</string>
+    <string name="ocr_found_nothing">Hiçbir şey okunamadı. Daha fazla ışıkla ve fişin tamamı kadrajdayken tekrar deneyin.</string>
+    <string name="ocr_failed">Bu görüntü okunamadı.</string>
+    <string name="edit_receipt">Fişi düzenle</string>
+    <string name="delete_receipt">Fişi sil</string>
+    <string name="receipt_photo">Fiş fotoğrafı</string>
+    <string name="field_store">Mağaza</string>
+    <string name="field_store_hint">Bu hangi mağazaydı?</string>
+    <string name="field_total">Toplam (%1$s)</string>
+    <string name="field_date">Tarih</string>
+    <string name="field_category">Kategori</string>
+    <string name="field_note">Not (isteğe bağlı)</string>
+    <string name="change">Değiştir</string>
+    <string name="save_changes">Değişiklikleri kaydet</string>
+    <string name="review_hint">Bu fişten bazı ayrıntılar okunamadı. Buradan düzeltin — mağaza adı bir sonraki sefere hatırlanacak.</string>
+    <string name="delete_confirm_title">Bu fiş silinsin mi?</string>
+    <string name="delete_confirm_body">Fotoğraf da kaldırılacak. Bu geri alınamaz.</string>
+    <string name="saved">Kaydedildi</string>
+    <string name="saved_needs_check">Kaydedildi — kontrol gerekiyor</string>
+    <string name="edit">Düzenle</string>
+    <string name="save">Kaydet</string>
+    <string name="cancel">İptal</string>
+    <string name="delete">Sil</string>
+    <string name="remove">Kaldır</string>
+    <string name="ok">Tamam</string>
+    <string name="cat_groceries">Market</string>
+    <string name="cat_dining">Yiyecek ve içecek</string>
+    <string name="cat_fuel">Yakıt</string>
+    <string name="cat_transport">Ulaşım</string>
+    <string name="cat_health">Sağlık ve bakım</string>
+    <string name="cat_home">Ev ve tadilat</string>
+    <string name="cat_electronics">Elektronik</string>
+    <string name="cat_clothing">Giyim</string>
+    <string name="cat_entertainment">Eğlence</string>
+    <string name="cat_other">Diğer</string>
+    <string name="settings_app_language">Uygulama dili</string>
+    <string name="settings_app_language_hint">Tally arayüzünün hangi dilde gösterileceği.</string>
+    <string name="settings_system_default">Sistem varsayılanı</string>
+    <string name="settings_receipt_languages">Fiş dilleri</string>
+    <string name="settings_receipt_languages_hint">Tally’nin toplamı ve tarihi bulmak için aradığı kelimeler. Fişlerinizin basıldığı dilleri açın — daha fazla dil, denenecek daha fazla eşleşme demektir; hiç görmediklerinizi kapatmak tespiti biraz keskinleştirir.</string>
+    <string name="settings_receipt_languages_none">En az birini seçin, aksi halde toplam yalnızca tahmin edilebilir.</string>
+    <string name="settings_currency">Para birimi</string>
+    <string name="settings_default_currency">Varsayılan para birimi</string>
+    <string name="settings_currency_hint">Fişte basılıysa Tally para birimini oradan okur. Basılı değilse buna geri döner — ve tek bir fişte istediğiniz zaman değiştirebilirsiniz.</string>
+    <string name="settings_date_order">Belirsiz tarihler</string>
+    <string name="settings_date_order_hint">03/04 gibi bir tarih 4 Mart da olabilir 3 Nisan da. Fiş başka ipucu vermediğinde neyin varsayılacağını bu belirler.</string>
+    <string name="date_order_auto">Uygulama dilini izle</string>
+    <string name="date_order_day_first">Önce gün (03/04 = 3 Nisan)</string>
+    <string name="date_order_month_first">Önce ay (03/04 = 4 Mart)</string>
+    <string name="settings_ocr_note">Metin tanıma yalnızca Latin alfabesini kapsar; Yunan, Kiril, Çin, Japon, Kore veya Hint yazılarındaki fişler okunmaz — uygulamanın kendisi bu dillerin bazılarında gösterilebilse bile.</string>
+    <string name="settings_about">Hakkında</string>
+    <string name="settings_version">Sürüm %1$s</string>
+    <string name="settings_source">Kaynak kodu ve sürümler</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d fiş</item>
+        <item quantity="other">%d fiş</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d fişin hızlıca kontrol edilmesi gerekiyor — aşağıda vurgulanana dokunun.</item>
+        <item quantity="other">%d fişin hızlıca kontrol edilmesi gerekiyor — aşağıda vurgulananlara dokunun.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">%d gün kaldı</item>
+        <item quantity="other">%d gün kaldı</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d gün</item>
+        <item quantity="other">%d gün</item>
+    </plurals>
+</resources>

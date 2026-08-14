@@ -13,8 +13,8 @@ android {
         applicationId = "com.encryxed.tally"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -42,6 +42,8 @@ android {
 
     buildFeatures {
         compose = true
+        // Needed for BuildConfig.VERSION_NAME, shown on the settings screen.
+        buildConfig = true
     }
 
     // The bundled OCR model ships native libraries for every ABI, which makes

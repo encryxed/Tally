@@ -12,7 +12,12 @@ import com.encryxed.tally.data.Budget
 import com.encryxed.tally.data.BudgetPeriod
 import com.encryxed.tally.data.MerchantAlias
 import com.encryxed.tally.data.Receipt
+import com.encryxed.tally.data.DateOrder
+import com.encryxed.tally.data.SettingsStore
 import com.encryxed.tally.data.TallyDatabase
+import com.encryxed.tally.data.TallySettings
+import com.encryxed.tally.parse.LanguagePack
+import com.encryxed.tally.parse.ReceiptLanguage
 import com.encryxed.tally.parse.ReceiptParser
 import com.encryxed.tally.parse.receiptSignature
 import com.encryxed.tally.scan.Ocr
@@ -52,6 +57,9 @@ class TallyViewModel(app: Application) : AndroidViewModel(app) {
     private val dao = database.receiptDao()
     private val aliasDao = database.merchantAliasDao()
     private val prefs = app.getSharedPreferences("tally", Context.MODE_PRIVATE)
+    private val settingsStore = SettingsStore(app)
+
+    val settings: StateFlow<TallySettings> = settingsStore.settings
 
     val receipts: StateFlow<List<Receipt>> = dao.observeAll()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
@@ -62,15 +70,24 @@ class TallyViewModel(app: Application) : AndroidViewModel(app) {
     var budget by mutableStateOf(loadBudget())
         private set
 
-    /**
-     * Date order and currency follow the phone's locale, so a receipt reading
-     * 03/04 means the right thing without the user configuring anything.
-     */
-    private val preferDayFirst: Boolean =
-        Locale.getDefault().country !in setOf("US", "PH", "FM", "MH", "PW")
+    fun setUiLanguage(tag: String?) = settingsStore.setUiLanguage(tag)
 
-    private val defaultCurrency: String =
-        runCatching { Currency.getInstance(Locale.getDefault()).currencyCode }.getOrDefault("EUR")
+    fun setDefaultCurrency(code: String) = settingsStore.setDefaultCurrency(code)
+
+    fun setReceiptLanguages(languages: Set<ReceiptLanguage>) =
+        settingsStore.setReceiptLanguages(languages)
+
+    fun setDateOrder(order: DateOrder) = settingsStore.setDateOrder(order)
+
+    /**
+     * Which way round an ambiguous date like 03/04 is read. On AUTO this
+     * follows the phone's region, which is right far more often than not.
+     */
+    private fun preferDayFirst(): Boolean = when (settingsStore.settings.value.dateOrder) {
+        DateOrder.DAY_FIRST -> true
+        DateOrder.MONTH_FIRST -> false
+        DateOrder.AUTO -> Locale.getDefault().country !in setOf("US", "PH", "FM", "MH", "PW")
+    }
 
     /**
      * Reads the photo and files the receipt immediately.
@@ -82,6 +99,11 @@ class TallyViewModel(app: Application) : AndroidViewModel(app) {
      */
     fun captureAndSave(imageUri: Uri, imagePath: String?) {
         scanState = ScanState.Reading
+        // Read once per scan so the settings can't shift mid-parse.
+        val current = settingsStore.settings.value
+        val pack = LanguagePack.of(current.receiptLanguages)
+        val dayFirst = preferDayFirst()
+
         viewModelScope.launch {
             scanState = runCatching {
                 // The photo is read at all four right-angle rotations and the
@@ -99,8 +121,9 @@ class TallyViewModel(app: Application) : AndroidViewModel(app) {
                     .map { read ->
                         ReceiptParser.parse(
                             lines = read.lines,
-                            preferDayFirst = preferDayFirst,
-                            defaultCurrency = defaultCurrency,
+                            preferDayFirst = dayFirst,
+                            defaultCurrency = current.defaultCurrency,
+                            pack = pack,
                         )
                     }
                     .maxBy { it.qualityScore }
@@ -117,7 +140,7 @@ class TallyViewModel(app: Application) : AndroidViewModel(app) {
                 val receipt = Receipt(
                     merchant = merchant,
                     total = parsed.total ?: 0.0,
-                    currency = parsed.currency.ifEmpty { defaultCurrency },
+                    currency = parsed.currency.ifEmpty { current.defaultCurrency },
                     date = parsed.date ?: LocalDate.now(),
                     category = category,
                     imagePath = imagePath,
@@ -180,7 +203,7 @@ class TallyViewModel(app: Application) : AndroidViewModel(app) {
         if (path != null) runCatching { File(path).delete() }
     }
 
-    fun fallbackCurrency(): String = defaultCurrency
+    fun fallbackCurrency(): String = settingsStore.settings.value.defaultCurrency
 
     // ------------------------------------------------------------- budget
 

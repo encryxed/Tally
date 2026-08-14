@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Scansiona scontrino</string>
+    <string name="export_csv">Esporta come CSV</string>
+    <string name="settings">Impostazioni</string>
+    <string name="empty_title">Ancora nessuno scontrino</string>
+    <string name="empty_body">Inquadra uno scontrino e Tally compila negozio, data e totale al posto tuo.</string>
+    <string name="watermark">Completamente open source · creato da @encryxed</string>
+    <string name="tap_to_check">tocca per controllare</string>
+    <string name="no_total">nessun totale</string>
+    <string name="budget_title">Budget di spesa</string>
+    <string name="budget_body">Tally terrà traccia di quanto hai speso e ti avviserà prima che tu lo superi.</string>
+    <string name="budget_amount">Importo (%1$s)</string>
+    <string name="budget_weekly">Settimanale</string>
+    <string name="budget_monthly">Mensile</string>
+    <string name="budget_on_track">In linea</string>
+    <string name="budget_nearly">Quasi al limite</string>
+    <string name="budget_over">Budget superato</string>
+    <string name="set_budget">Imposta budget</string>
+    <string name="budget_title_short">BUDGET</string>
+    <string name="budget_of">su %1$s</string>
+    <string name="budget_over_summary">%1$s in più · %2$s</string>
+    <string name="budget_left_summary">%1$s rimasti · %2$s/giorno per %3$s</string>
+    <string name="fit_receipt">Fai stare tutto lo scontrino nel riquadro</string>
+    <string name="reading_receipt">Lettura dello scontrino…</string>
+    <string name="capture_failed">Scatto non riuscito. Riprova.</string>
+    <string name="camera_start_failed">Impossibile avviare la fotocamera.</string>
+    <string name="camera_needed_title">Serve l’accesso alla fotocamera</string>
+    <string name="camera_needed_body">Tally legge gli scontrini con la fotocamera. Le foto restano su questo telefono — l’app non ha alcun accesso a Internet.</string>
+    <string name="camera_denied_body">Tally ha bisogno della fotocamera per leggere gli scontrini. Puoi attivarla in Impostazioni › App › Tally › Autorizzazioni.</string>
+    <string name="allow_camera">Consenti fotocamera</string>
+    <string name="go_back">Indietro</string>
+    <string name="back">Indietro</string>
+    <string name="ocr_found_nothing">Non è stato letto nulla. Riprova con più luce e tutto lo scontrino nell’inquadratura.</string>
+    <string name="ocr_failed">Impossibile leggere quell’immagine.</string>
+    <string name="edit_receipt">Modifica scontrino</string>
+    <string name="delete_receipt">Elimina scontrino</string>
+    <string name="receipt_photo">Foto dello scontrino</string>
+    <string name="field_store">Negozio</string>
+    <string name="field_store_hint">Di quale negozio si trattava?</string>
+    <string name="field_total">Totale (%1$s)</string>
+    <string name="field_date">Data</string>
+    <string name="field_category">Categoria</string>
+    <string name="field_note">Nota (facoltativa)</string>
+    <string name="change">Cambia</string>
+    <string name="save_changes">Salva modifiche</string>
+    <string name="review_hint">Alcuni dettagli non sono stati letti da questo scontrino. Correggili qui — il nome del negozio verrà ricordato per la prossima volta.</string>
+    <string name="delete_confirm_title">Eliminare questo scontrino?</string>
+    <string name="delete_confirm_body">Verrà rimossa anche la foto. L’operazione non è reversibile.</string>
+    <string name="saved">Salvato</string>
+    <string name="saved_needs_check">Salvato — da controllare</string>
+    <string name="edit">Modifica</string>
+    <string name="save">Salva</string>
+    <string name="cancel">Annulla</string>
+    <string name="delete">Elimina</string>
+    <string name="remove">Rimuovi</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Spesa</string>
+    <string name="cat_dining">Cibo e bevande</string>
+    <string name="cat_fuel">Carburante</string>
+    <string name="cat_transport">Trasporti</string>
+    <string name="cat_health">Salute e cura</string>
+    <string name="cat_home">Casa e fai da te</string>
+    <string name="cat_electronics">Elettronica</string>
+    <string name="cat_clothing">Abbigliamento</string>
+    <string name="cat_entertainment">Intrattenimento</string>
+    <string name="cat_other">Altro</string>
+    <string name="settings_app_language">Lingua dell’app</string>
+    <string name="settings_app_language_hint">In quale lingua viene mostrata Tally.</string>
+    <string name="settings_system_default">Predefinita di sistema</string>
+    <string name="settings_receipt_languages">Lingue degli scontrini</string>
+    <string name="settings_receipt_languages_hint">Quali parole cerca Tally per trovare il totale e la data. Attiva le lingue in cui sono stampati i tuoi scontrini — più lingue significa più confronti, quindi disattivare quelle che non incontri mai rende il riconoscimento un po’ più preciso.</string>
+    <string name="settings_receipt_languages_none">Scegline almeno una, altrimenti il totale può solo essere indovinato.</string>
+    <string name="settings_currency">Valuta</string>
+    <string name="settings_default_currency">Valuta predefinita</string>
+    <string name="settings_currency_hint">Tally legge la valuta dallo scontrino quando è stampata. Questa è quella di riserva quando non lo è — e puoi comunque cambiarla su un singolo scontrino.</string>
+    <string name="settings_date_order">Date ambigue</string>
+    <string name="settings_date_order_hint">Una data come 03/04 può essere il 4 marzo o il 3 aprile. Questo decide cosa presumere quando lo scontrino non dà altri indizi.</string>
+    <string name="date_order_auto">Segui la lingua dell’app</string>
+    <string name="date_order_day_first">Prima il giorno (03/04 = 3 aprile)</string>
+    <string name="date_order_month_first">Prima il mese (03/04 = 4 marzo)</string>
+    <string name="settings_ocr_note">Il riconoscimento del testo copre solo l’alfabeto latino, quindi gli scontrini in greco, cirillico, cinese, giapponese, coreano o scritture indiane non verranno letti — anche se l’app stessa può essere mostrata in alcune di quelle lingue.</string>
+    <string name="settings_about">Informazioni</string>
+    <string name="settings_version">Versione %1$s</string>
+    <string name="settings_source">Codice sorgente e release</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d scontrino</item>
+        <item quantity="other">%d scontrini</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d scontrino va controllato — tocca quello evidenziato qui sotto.</item>
+        <item quantity="other">%d scontrini vanno controllati — tocca quelli evidenziati qui sotto.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">%d giorno rimasto</item>
+        <item quantity="other">%d giorni rimasti</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d giorno</item>
+        <item quantity="other">%d giorni</item>
+    </plurals>
+</resources>

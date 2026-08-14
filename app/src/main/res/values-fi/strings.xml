@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Skannaa kuitti</string>
+    <string name="export_csv">Vie CSV-tiedostona</string>
+    <string name="settings">Asetukset</string>
+    <string name="empty_title">Ei vielä kuitteja</string>
+    <string name="empty_body">Suuntaa kamera kuittiin, niin Tally täyttää kaupan, päivämäärän ja summan puolestasi.</string>
+    <string name="watermark">Täysin avointa lähdekoodia · tekijä @encryxed</string>
+    <string name="tap_to_check">tarkista napauttamalla</string>
+    <string name="no_total">ei summaa</string>
+    <string name="budget_title">Kulubudjetti</string>
+    <string name="budget_body">Tally seuraa, paljonko olet siitä käyttänyt, ja varoittaa ennen kuin ylität sen.</string>
+    <string name="budget_amount">Summa (%1$s)</string>
+    <string name="budget_weekly">Viikoittain</string>
+    <string name="budget_monthly">Kuukausittain</string>
+    <string name="budget_on_track">Hyvin menee</string>
+    <string name="budget_nearly">Lähes täynnä</string>
+    <string name="budget_over">Budjetti ylitetty</string>
+    <string name="set_budget">Aseta budjetti</string>
+    <string name="budget_title_short">BUDJETTI</string>
+    <string name="budget_of">/ %1$s</string>
+    <string name="budget_over_summary">%1$s yli · %2$s</string>
+    <string name="budget_left_summary">%1$s jäljellä · %2$s/päivä %3$s ajan</string>
+    <string name="fit_receipt">Sovita koko kuitti kehykseen</string>
+    <string name="reading_receipt">Luetaan kuittia…</string>
+    <string name="capture_failed">Kuvaus epäonnistui. Yritä uudelleen.</string>
+    <string name="camera_start_failed">Kameraa ei voitu käynnistää.</string>
+    <string name="camera_needed_title">Kameran käyttöoikeus tarvitaan</string>
+    <string name="camera_needed_body">Tally lukee kuitit kameralla. Kuvat pysyvät tässä puhelimessa — sovelluksella ei ole lainkaan internetyhteyttä.</string>
+    <string name="camera_denied_body">Tally tarvitsee kameran kuittien lukemiseen. Voit ottaa sen käyttöön kohdassa Asetukset › Sovellukset › Tally › Käyttöoikeudet.</string>
+    <string name="allow_camera">Salli kamera</string>
+    <string name="go_back">Takaisin</string>
+    <string name="back">Takaisin</string>
+    <string name="ocr_found_nothing">Mitään ei voitu lukea. Yritä uudelleen paremmassa valossa ja koko kuitti kuvassa.</string>
+    <string name="ocr_failed">Kuvaa ei voitu lukea.</string>
+    <string name="edit_receipt">Muokkaa kuittia</string>
+    <string name="delete_receipt">Poista kuitti</string>
+    <string name="receipt_photo">Kuva kuitista</string>
+    <string name="field_store">Kauppa</string>
+    <string name="field_store_hint">Mikä kauppa tämä oli?</string>
+    <string name="field_total">Yhteensä (%1$s)</string>
+    <string name="field_date">Päivämäärä</string>
+    <string name="field_category">Luokka</string>
+    <string name="field_note">Muistiinpano (valinnainen)</string>
+    <string name="change">Vaihda</string>
+    <string name="save_changes">Tallenna muutokset</string>
+    <string name="review_hint">Joitakin tietoja ei voitu lukea tästä kuitista. Korjaa ne tässä — kaupan nimi muistetaan ensi kerralla.</string>
+    <string name="delete_confirm_title">Poistetaanko tämä kuitti?</string>
+    <string name="delete_confirm_body">Myös kuva poistetaan. Tätä ei voi kumota.</string>
+    <string name="saved">Tallennettu</string>
+    <string name="saved_needs_check">Tallennettu — tarkista</string>
+    <string name="edit">Muokkaa</string>
+    <string name="save">Tallenna</string>
+    <string name="cancel">Peruuta</string>
+    <string name="delete">Poista</string>
+    <string name="remove">Poista</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Ruokaostokset</string>
+    <string name="cat_dining">Ruoka ja juoma</string>
+    <string name="cat_fuel">Polttoaine</string>
+    <string name="cat_transport">Liikenne</string>
+    <string name="cat_health">Terveys ja hoito</string>
+    <string name="cat_home">Koti ja remontti</string>
+    <string name="cat_electronics">Elektroniikka</string>
+    <string name="cat_clothing">Vaatteet</string>
+    <string name="cat_entertainment">Viihde</string>
+    <string name="cat_other">Muu</string>
+    <string name="settings_app_language">Sovelluksen kieli</string>
+    <string name="settings_app_language_hint">Millä kielellä Tally itse näytetään.</string>
+    <string name="settings_system_default">Järjestelmän oletus</string>
+    <string name="settings_receipt_languages">Kuittien kielet</string>
+    <string name="settings_receipt_languages_hint">Mitä sanoja Tally etsii löytääkseen summan ja päivämäärän. Ota käyttöön ne kielet, joilla kuittisi on painettu — useampi kieli tarkoittaa enemmän vertailtavaa, joten harvoin näkemiesi kielten poistaminen terävöittää tunnistusta hieman.</string>
+    <string name="settings_receipt_languages_none">Valitse vähintään yksi, muuten summaa voi vain arvailla.</string>
+    <string name="settings_currency">Valuutta</string>
+    <string name="settings_default_currency">Oletusvaluutta</string>
+    <string name="settings_currency_hint">Tally lukee valuutan kuitista, kun se on siihen painettu. Tähän se turvautuu, kun sitä ei ole — ja voit silti vaihtaa sen yksittäisessä kuitissa.</string>
+    <string name="settings_date_order">Monitulkintaiset päivämäärät</string>
+    <string name="settings_date_order_hint">Päivämäärä kuten 03/04 voi olla 4. maaliskuuta tai 3. huhtikuuta. Tämä ratkaisee, mitä oletetaan, kun kuitti ei anna muuta vihjettä.</string>
+    <string name="date_order_auto">Seuraa sovelluksen kieltä</string>
+    <string name="date_order_day_first">Päivä ensin (03/04 = 3. huhtikuuta)</string>
+    <string name="date_order_month_first">Kuukausi ensin (03/04 = 4. maaliskuuta)</string>
+    <string name="settings_ocr_note">Tekstintunnistus kattaa vain latinalaiset kirjaimet, joten kreikkalaisin, kyrillisin, kiinalaisin, japanilaisin, korealaisin tai intialaisin kirjaimin painettuja kuitteja ei lueta — vaikka sovellus itse voidaan näyttää joillakin noista kielistä.</string>
+    <string name="settings_about">Tietoja</string>
+    <string name="settings_version">Versio %1$s</string>
+    <string name="settings_source">Lähdekoodi ja julkaisut</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d kuitti</item>
+        <item quantity="other">%d kuittia</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d kuitti kaipaa pikaista tarkistusta — napauta korostettua alla.</item>
+        <item quantity="other">%d kuittia kaipaa pikaista tarkistusta — napauta korostettuja alla.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">%d päivä jäljellä</item>
+        <item quantity="other">%d päivää jäljellä</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d päivä</item>
+        <item quantity="other">%d päivää</item>
+    </plurals>
+</resources>

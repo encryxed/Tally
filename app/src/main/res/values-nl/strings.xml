@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Bon scannen</string>
+    <string name="export_csv">Exporteren als CSV</string>
+    <string name="settings">Instellingen</string>
+    <string name="empty_title">Nog geen bonnen</string>
+    <string name="empty_body">Richt de camera op een bon en Tally vult de winkel, datum en het totaal voor je in.</string>
+    <string name="watermark">Volledig open source · gemaakt door @encryxed</string>
+    <string name="tap_to_check">tik om te controleren</string>
+    <string name="no_total">geen totaal</string>
+    <string name="budget_title">Uitgavenbudget</string>
+    <string name="budget_body">Tally houdt bij wat je hiervan hebt uitgegeven en waarschuwt je voordat je eroverheen gaat.</string>
+    <string name="budget_amount">Bedrag (%1$s)</string>
+    <string name="budget_weekly">Wekelijks</string>
+    <string name="budget_monthly">Maandelijks</string>
+    <string name="budget_on_track">Op koers</string>
+    <string name="budget_nearly">Bijna op</string>
+    <string name="budget_over">Over budget</string>
+    <string name="set_budget">Budget instellen</string>
+    <string name="budget_title_short">BUDGET</string>
+    <string name="budget_of">van %1$s</string>
+    <string name="budget_over_summary">%1$s over · %2$s</string>
+    <string name="budget_left_summary">%1$s over · %2$s/dag voor %3$s</string>
+    <string name="fit_receipt">Zorg dat de hele bon in beeld past</string>
+    <string name="reading_receipt">Bon lezen…</string>
+    <string name="capture_failed">Foto mislukt. Probeer opnieuw.</string>
+    <string name="camera_start_failed">Kan de camera niet starten.</string>
+    <string name="camera_needed_title">Cameratoegang nodig</string>
+    <string name="camera_needed_body">Tally leest bonnen met de camera. Foto’s blijven op deze telefoon — de app heeft helemaal geen internettoegang.</string>
+    <string name="camera_denied_body">Tally heeft de camera nodig om bonnen te lezen. Je kunt dit inschakelen bij Instellingen › Apps › Tally › Rechten.</string>
+    <string name="allow_camera">Camera toestaan</string>
+    <string name="go_back">Terug</string>
+    <string name="back">Terug</string>
+    <string name="ocr_found_nothing">Kon niets lezen. Probeer het opnieuw met meer licht en de hele bon in beeld.</string>
+    <string name="ocr_failed">Kon die afbeelding niet lezen.</string>
+    <string name="edit_receipt">Bon bewerken</string>
+    <string name="delete_receipt">Bon verwijderen</string>
+    <string name="receipt_photo">Foto van de bon</string>
+    <string name="field_store">Winkel</string>
+    <string name="field_store_hint">Welke winkel was dit?</string>
+    <string name="field_total">Totaal (%1$s)</string>
+    <string name="field_date">Datum</string>
+    <string name="field_category">Categorie</string>
+    <string name="field_note">Notitie (optioneel)</string>
+    <string name="change">Wijzigen</string>
+    <string name="save_changes">Wijzigingen opslaan</string>
+    <string name="review_hint">Sommige gegevens konden niet van deze bon worden gelezen. Corrigeer ze hier — de winkelnaam wordt onthouden voor de volgende keer.</string>
+    <string name="delete_confirm_title">Deze bon verwijderen?</string>
+    <string name="delete_confirm_body">De foto wordt ook verwijderd. Dit kan niet ongedaan worden gemaakt.</string>
+    <string name="saved">Opgeslagen</string>
+    <string name="saved_needs_check">Opgeslagen — controleer even</string>
+    <string name="edit">Bewerken</string>
+    <string name="save">Opslaan</string>
+    <string name="cancel">Annuleren</string>
+    <string name="delete">Verwijderen</string>
+    <string name="remove">Verwijderen</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Boodschappen</string>
+    <string name="cat_dining">Eten &amp; drinken</string>
+    <string name="cat_fuel">Brandstof</string>
+    <string name="cat_transport">Vervoer</string>
+    <string name="cat_health">Gezondheid &amp; verzorging</string>
+    <string name="cat_home">Huis &amp; klussen</string>
+    <string name="cat_electronics">Elektronica</string>
+    <string name="cat_clothing">Kleding</string>
+    <string name="cat_entertainment">Vermaak</string>
+    <string name="cat_other">Overig</string>
+    <string name="settings_app_language">Taal van de app</string>
+    <string name="settings_app_language_hint">In welke taal Tally zelf wordt weergegeven.</string>
+    <string name="settings_system_default">Systeemstandaard</string>
+    <string name="settings_receipt_languages">Talen van bonnen</string>
+    <string name="settings_receipt_languages_hint">Welke woorden Tally zoekt om het totaal en de datum te vinden. Zet de talen aan waarin jouw bonnen gedrukt zijn — meer talen betekent meer om te vergelijken, dus talen die je nooit ziet uitzetten maakt de herkenning iets scherper.</string>
+    <string name="settings_receipt_languages_none">Kies er minstens één, anders kan het totaal alleen geraden worden.</string>
+    <string name="settings_currency">Valuta</string>
+    <string name="settings_default_currency">Standaardvaluta</string>
+    <string name="settings_currency_hint">Tally leest de valuta van de bon af als die erop staat. Dit is waar het op terugvalt als dat niet zo is — en je kunt het bij elke bon nog aanpassen.</string>
+    <string name="settings_date_order">Dubbelzinnige datums</string>
+    <string name="settings_date_order_hint">Een datum als 03/04 kan 4 maart of 3 april zijn. Dit bepaalt wat er wordt aangenomen als de bon geen andere aanwijzing geeft.</string>
+    <string name="date_order_auto">Volg de taal van de app</string>
+    <string name="date_order_day_first">Dag eerst (03/04 = 3 april)</string>
+    <string name="date_order_month_first">Maand eerst (03/04 = 4 maart)</string>
+    <string name="settings_ocr_note">Tekstherkenning werkt alleen met het Latijnse schrift, dus bonnen in het Grieks, Cyrillisch, Chinees, Japans, Koreaans of Indische schriften worden niet gelezen — ook al kan de app zelf wel in sommige van die talen worden weergegeven.</string>
+    <string name="settings_about">Over</string>
+    <string name="settings_version">Versie %1$s</string>
+    <string name="settings_source">Broncode en releases</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d bon</item>
+        <item quantity="other">%d bonnen</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d bon moet even gecontroleerd worden — tik op de gemarkeerde hieronder.</item>
+        <item quantity="other">%d bonnen moeten even gecontroleerd worden — tik op de gemarkeerde hieronder.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">nog %d dag</item>
+        <item quantity="other">nog %d dagen</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d dag</item>
+        <item quantity="other">%d dagen</item>
+    </plurals>
+</resources>

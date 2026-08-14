@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Pindai struk</string>
+    <string name="export_csv">Ekspor sebagai CSV</string>
+    <string name="settings">Pengaturan</string>
+    <string name="empty_title">Belum ada struk</string>
+    <string name="empty_body">Arahkan kamera ke struk dan Tally akan mengisi toko, tanggal, dan totalnya untuk Anda.</string>
+    <string name="watermark">Sepenuhnya sumber terbuka · dibuat oleh @encryxed</string>
+    <string name="tap_to_check">ketuk untuk memeriksa</string>
+    <string name="no_total">tanpa total</string>
+    <string name="budget_title">Anggaran pengeluaran</string>
+    <string name="budget_body">Tally akan melacak berapa yang sudah Anda pakai dan memperingatkan sebelum Anda melewatinya.</string>
+    <string name="budget_amount">Jumlah (%1$s)</string>
+    <string name="budget_weekly">Mingguan</string>
+    <string name="budget_monthly">Bulanan</string>
+    <string name="budget_on_track">Masih aman</string>
+    <string name="budget_nearly">Hampir habis</string>
+    <string name="budget_over">Melebihi anggaran</string>
+    <string name="set_budget">Atur anggaran</string>
+    <string name="budget_title_short">ANGGARAN</string>
+    <string name="budget_of">dari %1$s</string>
+    <string name="budget_over_summary">%1$s lebih · %2$s</string>
+    <string name="budget_left_summary">%1$s tersisa · %2$s/hari selama %3$s</string>
+    <string name="fit_receipt">Pastikan seluruh struk masuk dalam bingkai</string>
+    <string name="reading_receipt">Membaca struk…</string>
+    <string name="capture_failed">Pengambilan gambar gagal. Coba lagi.</string>
+    <string name="camera_start_failed">Kamera tidak dapat dijalankan.</string>
+    <string name="camera_needed_title">Perlu akses kamera</string>
+    <string name="camera_needed_body">Tally membaca struk dengan kamera. Foto tetap di ponsel ini — aplikasi sama sekali tidak punya akses internet.</string>
+    <string name="camera_denied_body">Tally memerlukan kamera untuk membaca struk. Anda dapat mengaktifkannya di Pengaturan › Aplikasi › Tally › Izin.</string>
+    <string name="allow_camera">Izinkan kamera</string>
+    <string name="go_back">Kembali</string>
+    <string name="back">Kembali</string>
+    <string name="ocr_found_nothing">Tidak ada yang bisa dibaca. Coba lagi dengan cahaya lebih terang dan seluruh struk dalam bingkai.</string>
+    <string name="ocr_failed">Gambar itu tidak dapat dibaca.</string>
+    <string name="edit_receipt">Edit struk</string>
+    <string name="delete_receipt">Hapus struk</string>
+    <string name="receipt_photo">Foto struk</string>
+    <string name="field_store">Toko</string>
+    <string name="field_store_hint">Toko mana ini?</string>
+    <string name="field_total">Total (%1$s)</string>
+    <string name="field_date">Tanggal</string>
+    <string name="field_category">Kategori</string>
+    <string name="field_note">Catatan (opsional)</string>
+    <string name="change">Ubah</string>
+    <string name="save_changes">Simpan perubahan</string>
+    <string name="review_hint">Beberapa detail tidak dapat dibaca dari struk ini. Perbaiki di sini — nama toko akan diingat untuk lain kali.</string>
+    <string name="delete_confirm_title">Hapus struk ini?</string>
+    <string name="delete_confirm_body">Fotonya juga akan dihapus. Ini tidak bisa dibatalkan.</string>
+    <string name="saved">Tersimpan</string>
+    <string name="saved_needs_check">Tersimpan — perlu diperiksa</string>
+    <string name="edit">Edit</string>
+    <string name="save">Simpan</string>
+    <string name="cancel">Batal</string>
+    <string name="delete">Hapus</string>
+    <string name="remove">Hapus</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Belanja harian</string>
+    <string name="cat_dining">Makanan &amp; minuman</string>
+    <string name="cat_fuel">Bahan bakar</string>
+    <string name="cat_transport">Transportasi</string>
+    <string name="cat_health">Kesehatan &amp; perawatan</string>
+    <string name="cat_home">Rumah &amp; perkakas</string>
+    <string name="cat_electronics">Elektronik</string>
+    <string name="cat_clothing">Pakaian</string>
+    <string name="cat_entertainment">Hiburan</string>
+    <string name="cat_other">Lainnya</string>
+    <string name="settings_app_language">Bahasa aplikasi</string>
+    <string name="settings_app_language_hint">Bahasa yang dipakai tampilan Tally sendiri.</string>
+    <string name="settings_system_default">Bawaan sistem</string>
+    <string name="settings_receipt_languages">Bahasa struk</string>
+    <string name="settings_receipt_languages_hint">Kata-kata yang dicari Tally untuk menemukan total dan tanggal. Aktifkan bahasa yang tercetak pada struk Anda — makin banyak bahasa makin banyak yang dicocokkan, jadi mematikan yang tidak pernah Anda temui membuat deteksi sedikit lebih tajam.</string>
+    <string name="settings_receipt_languages_none">Pilih setidaknya satu, kalau tidak total hanya bisa ditebak.</string>
+    <string name="settings_currency">Mata uang</string>
+    <string name="settings_default_currency">Mata uang bawaan</string>
+    <string name="settings_currency_hint">Tally membaca mata uang dari struk bila tercetak di sana. Ini yang dipakai bila tidak — dan Anda tetap bisa mengubahnya pada satu struk.</string>
+    <string name="settings_date_order">Tanggal ambigu</string>
+    <string name="settings_date_order_hint">Tanggal seperti 03/04 bisa berarti 4 Maret atau 3 April. Ini menentukan asumsi bila struk tidak memberi petunjuk lain.</string>
+    <string name="date_order_auto">Ikuti bahasa aplikasi</string>
+    <string name="date_order_day_first">Hari dulu (03/04 = 3 April)</string>
+    <string name="date_order_month_first">Bulan dulu (03/04 = 4 Maret)</string>
+    <string name="settings_ocr_note">Pengenalan teks hanya mencakup aksara Latin, jadi struk beraksara Yunani, Kiril, Tionghoa, Jepang, Korea, atau India tidak akan terbaca — meskipun aplikasinya sendiri bisa ditampilkan dalam sebagian bahasa tersebut.</string>
+    <string name="settings_about">Tentang</string>
+    <string name="settings_version">Versi %1$s</string>
+    <string name="settings_source">Kode sumber dan rilis</string>
+    <plurals name="receipt_count">
+        <item quantity="other">%d struk</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="other">%d struk perlu diperiksa sebentar — ketuk yang disorot di bawah.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="other">%d hari tersisa</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="other">%d hari</item>
+    </plurals>
+</resources>

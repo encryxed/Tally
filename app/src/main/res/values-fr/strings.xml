@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Scanner un ticket</string>
+    <string name="export_csv">Exporter en CSV</string>
+    <string name="settings">Paramètres</string>
+    <string name="empty_title">Aucun ticket pour l’instant</string>
+    <string name="empty_body">Pointez la caméra vers un ticket et Tally remplit le magasin, la date et le total pour vous.</string>
+    <string name="watermark">Entièrement open source · créé par @encryxed</string>
+    <string name="tap_to_check">appuyer pour vérifier</string>
+    <string name="no_total">pas de total</string>
+    <string name="budget_title">Budget de dépenses</string>
+    <string name="budget_body">Tally suit ce que vous avez dépensé dessus et vous prévient avant que vous ne le dépassiez.</string>
+    <string name="budget_amount">Montant (%1$s)</string>
+    <string name="budget_weekly">Hebdomadaire</string>
+    <string name="budget_monthly">Mensuel</string>
+    <string name="budget_on_track">Dans les clous</string>
+    <string name="budget_nearly">Presque atteint</string>
+    <string name="budget_over">Budget dépassé</string>
+    <string name="set_budget">Définir un budget</string>
+    <string name="budget_title_short">BUDGET</string>
+    <string name="budget_of">sur %1$s</string>
+    <string name="budget_over_summary">%1$s de dépassement · %2$s</string>
+    <string name="budget_left_summary">%1$s restants · %2$s/jour pendant %3$s</string>
+    <string name="fit_receipt">Faites tenir tout le ticket dans le cadre</string>
+    <string name="reading_receipt">Lecture du ticket…</string>
+    <string name="capture_failed">Échec de la prise de vue. Réessayez.</string>
+    <string name="camera_start_failed">Impossible de démarrer la caméra.</string>
+    <string name="camera_needed_title">Accès à la caméra nécessaire</string>
+    <string name="camera_needed_body">Tally lit les tickets avec la caméra. Les photos restent sur ce téléphone — l’application n’a aucun accès à Internet.</string>
+    <string name="camera_denied_body">Tally a besoin de la caméra pour lire les tickets. Vous pouvez l’activer dans Paramètres › Applications › Tally › Autorisations.</string>
+    <string name="allow_camera">Autoriser la caméra</string>
+    <string name="go_back">Retour</string>
+    <string name="back">Retour</string>
+    <string name="ocr_found_nothing">Rien n’a pu être lu. Réessayez avec plus de lumière et tout le ticket dans le cadre.</string>
+    <string name="ocr_failed">Impossible de lire cette image.</string>
+    <string name="edit_receipt">Modifier le ticket</string>
+    <string name="delete_receipt">Supprimer le ticket</string>
+    <string name="receipt_photo">Photo du ticket</string>
+    <string name="field_store">Magasin</string>
+    <string name="field_store_hint">De quel magasin s’agissait-il ?</string>
+    <string name="field_total">Total (%1$s)</string>
+    <string name="field_date">Date</string>
+    <string name="field_category">Catégorie</string>
+    <string name="field_note">Note (facultatif)</string>
+    <string name="change">Modifier</string>
+    <string name="save_changes">Enregistrer les modifications</string>
+    <string name="review_hint">Certains détails n’ont pas pu être lus sur ce ticket. Corrigez-les ici — le nom du magasin sera retenu pour la prochaine fois.</string>
+    <string name="delete_confirm_title">Supprimer ce ticket ?</string>
+    <string name="delete_confirm_body">La photo sera également supprimée. Cette action est irréversible.</string>
+    <string name="saved">Enregistré</string>
+    <string name="saved_needs_check">Enregistré — à vérifier</string>
+    <string name="edit">Modifier</string>
+    <string name="save">Enregistrer</string>
+    <string name="cancel">Annuler</string>
+    <string name="delete">Supprimer</string>
+    <string name="remove">Retirer</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Courses</string>
+    <string name="cat_dining">Nourriture &amp; boissons</string>
+    <string name="cat_fuel">Carburant</string>
+    <string name="cat_transport">Transport</string>
+    <string name="cat_health">Santé &amp; soins</string>
+    <string name="cat_home">Maison &amp; bricolage</string>
+    <string name="cat_electronics">Électronique</string>
+    <string name="cat_clothing">Vêtements</string>
+    <string name="cat_entertainment">Loisirs</string>
+    <string name="cat_other">Autre</string>
+    <string name="settings_app_language">Langue de l’application</string>
+    <string name="settings_app_language_hint">La langue dans laquelle Tally lui-même s’affiche.</string>
+    <string name="settings_system_default">Réglage du système</string>
+    <string name="settings_receipt_languages">Langues des tickets</string>
+    <string name="settings_receipt_languages_hint">Les mots que Tally cherche pour trouver le total et la date. Activez les langues dans lesquelles vos tickets sont imprimés — plus il y a de langues, plus il y a de correspondances à tester, donc désactiver celles que vous ne voyez jamais affine un peu la détection.</string>
+    <string name="settings_receipt_languages_none">Choisissez-en au moins une, sinon le total ne peut être que deviné.</string>
+    <string name="settings_currency">Devise</string>
+    <string name="settings_default_currency">Devise par défaut</string>
+    <string name="settings_currency_hint">Tally lit la devise sur le ticket lorsqu’elle y figure. Voici ce qu’il utilise sinon — et vous pouvez toujours la changer sur un ticket donné.</string>
+    <string name="settings_date_order">Dates ambiguës</string>
+    <string name="settings_date_order_hint">Une date comme 03/04 peut être le 4 mars ou le 3 avril. Ceci décide de l’hypothèse retenue lorsque le ticket ne donne aucun autre indice.</string>
+    <string name="date_order_auto">Suivre la langue de l’application</string>
+    <string name="date_order_day_first">Jour en premier (03/04 = 3 avril)</string>
+    <string name="date_order_month_first">Mois en premier (03/04 = 4 mars)</string>
+    <string name="settings_ocr_note">La reconnaissance de texte ne couvre que l’alphabet latin : les tickets en grec, cyrillique, chinois, japonais, coréen ou en écritures indiennes ne seront pas lus — même si l’application peut s’afficher dans certaines de ces langues.</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_source">Code source et versions</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d ticket</item>
+        <item quantity="other">%d tickets</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d ticket demande une vérification rapide — appuyez sur celui en surbrillance ci-dessous.</item>
+        <item quantity="other">%d tickets demandent une vérification rapide — appuyez sur ceux en surbrillance ci-dessous.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">%d jour restant</item>
+        <item quantity="other">%d jours restants</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d jour</item>
+        <item quantity="other">%d jours</item>
+    </plurals>
+</resources>

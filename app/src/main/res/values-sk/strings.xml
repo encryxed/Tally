@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Naskenovať účtenku</string>
+    <string name="export_csv">Exportovať ako CSV</string>
+    <string name="settings">Nastavenia</string>
+    <string name="empty_title">Zatiaľ žiadne účtenky</string>
+    <string name="empty_body">Namierte fotoaparát na účtenku a Tally za vás doplní obchod, dátum aj sumu.</string>
+    <string name="watermark">Úplne otvorený zdrojový kód · vytvoril @encryxed</string>
+    <string name="tap_to_check">ťuknutím skontrolovať</string>
+    <string name="no_total">bez sumy</string>
+    <string name="budget_title">Rozpočet výdavkov</string>
+    <string name="budget_body">Tally sleduje, koľko ste z neho minuli, a upozorní vás skôr, než ho prekročíte.</string>
+    <string name="budget_amount">Suma (%1$s)</string>
+    <string name="budget_weekly">Týždenný</string>
+    <string name="budget_monthly">Mesačný</string>
+    <string name="budget_on_track">V poriadku</string>
+    <string name="budget_nearly">Takmer vyčerpané</string>
+    <string name="budget_over">Rozpočet prekročený</string>
+    <string name="set_budget">Nastaviť rozpočet</string>
+    <string name="budget_title_short">ROZPOČET</string>
+    <string name="budget_of">z %1$s</string>
+    <string name="budget_over_summary">%1$s navyše · %2$s</string>
+    <string name="budget_left_summary">%1$s zostáva · %2$s/deň počas %3$s</string>
+    <string name="fit_receipt">Umiestnite celú účtenku do rámčeka</string>
+    <string name="reading_receipt">Načítava sa účtenka…</string>
+    <string name="capture_failed">Snímka sa nepodarila. Skúste to znova.</string>
+    <string name="camera_start_failed">Fotoaparát sa nepodarilo spustiť.</string>
+    <string name="camera_needed_title">Je potrebný prístup k fotoaparátu</string>
+    <string name="camera_needed_body">Tally číta účtenky fotoaparátom. Fotografie zostávajú v tomto telefóne — aplikácia nemá vôbec žiadny prístup na internet.</string>
+    <string name="camera_denied_body">Tally potrebuje fotoaparát na čítanie účteniek. Môžete ho povoliť v Nastavenia › Aplikácie › Tally › Povolenia.</string>
+    <string name="allow_camera">Povoliť fotoaparát</string>
+    <string name="go_back">Späť</string>
+    <string name="back">Späť</string>
+    <string name="ocr_found_nothing">Nepodarilo sa nič prečítať. Skúste to znova pri lepšom svetle a s celou účtenkou v zábere.</string>
+    <string name="ocr_failed">Tento obrázok sa nepodarilo prečítať.</string>
+    <string name="edit_receipt">Upraviť účtenku</string>
+    <string name="delete_receipt">Odstrániť účtenku</string>
+    <string name="receipt_photo">Fotografia účtenky</string>
+    <string name="field_store">Obchod</string>
+    <string name="field_store_hint">O aký obchod išlo?</string>
+    <string name="field_total">Spolu (%1$s)</string>
+    <string name="field_date">Dátum</string>
+    <string name="field_category">Kategória</string>
+    <string name="field_note">Poznámka (nepovinná)</string>
+    <string name="change">Zmeniť</string>
+    <string name="save_changes">Uložiť zmeny</string>
+    <string name="review_hint">Niektoré údaje sa z tejto účtenky nepodarilo prečítať. Opravte ich tu — názov obchodu si aplikácia zapamätá na nabudúce.</string>
+    <string name="delete_confirm_title">Odstrániť túto účtenku?</string>
+    <string name="delete_confirm_body">Odstráni sa aj fotografia. Túto akciu nemožno vrátiť späť.</string>
+    <string name="saved">Uložené</string>
+    <string name="saved_needs_check">Uložené — vyžaduje kontrolu</string>
+    <string name="edit">Upraviť</string>
+    <string name="save">Uložiť</string>
+    <string name="cancel">Zrušiť</string>
+    <string name="delete">Odstrániť</string>
+    <string name="remove">Odobrať</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Potraviny</string>
+    <string name="cat_dining">Jedlo a nápoje</string>
+    <string name="cat_fuel">Palivo</string>
+    <string name="cat_transport">Doprava</string>
+    <string name="cat_health">Zdravie a starostlivosť</string>
+    <string name="cat_home">Dom a domáce práce</string>
+    <string name="cat_electronics">Elektronika</string>
+    <string name="cat_clothing">Oblečenie</string>
+    <string name="cat_entertainment">Zábava</string>
+    <string name="cat_other">Ostatné</string>
+    <string name="settings_app_language">Jazyk aplikácie</string>
+    <string name="settings_app_language_hint">V akom jazyku sa zobrazuje samotná aplikácia Tally.</string>
+    <string name="settings_system_default">Predvolené systémom</string>
+    <string name="settings_receipt_languages">Jazyky účteniek</string>
+    <string name="settings_receipt_languages_hint">Aké slová Tally hľadá, aby našiel sumu a dátum. Zapnite jazyky, v ktorých sú vaše účtenky vytlačené — viac jazykov znamená viac porovnávania, takže vypnutie tých, ktoré nikdy nevidíte, rozpoznávanie mierne spresní.</string>
+    <string name="settings_receipt_languages_none">Vyberte aspoň jeden, inak sa suma dá len odhadovať.</string>
+    <string name="settings_currency">Mena</string>
+    <string name="settings_default_currency">Predvolená mena</string>
+    <string name="settings_currency_hint">Tally načíta menu z účtenky, ak je na nej vytlačená. Toto použije, keď nie je — a pri jednotlivej účtenke ju stále môžete zmeniť.</string>
+    <string name="settings_date_order">Nejednoznačné dátumy</string>
+    <string name="settings_date_order_hint">Dátum ako 03/04 môže byť 4. marca alebo 3. apríla. Toto určuje, čo sa predpokladá, keď účtenka nedáva inú stopu.</string>
+    <string name="date_order_auto">Podľa jazyka aplikácie</string>
+    <string name="date_order_day_first">Najprv deň (03/04 = 3. apríla)</string>
+    <string name="date_order_month_first">Najprv mesiac (03/04 = 4. marca)</string>
+    <string name="settings_ocr_note">Rozpoznávanie textu pokrýva iba latinku, takže účtenky v gréčtine, cyrilike, čínštine, japončine, kórejčine alebo indických písmach prečítané nebudú — aj keď samotná aplikácia sa v niektorých z týchto jazykov zobraziť dá.</string>
+    <string name="settings_about">O aplikácii</string>
+    <string name="settings_version">Verzia %1$s</string>
+    <string name="settings_source">Zdrojový kód a vydania</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d účtenka</item>
+        <item quantity="few">%d účtenky</item>
+        <item quantity="other">%d účteniek</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d účtenka vyžaduje rýchlu kontrolu — ťuknite na zvýraznenú nižšie.</item>
+        <item quantity="few">%d účtenky vyžadujú rýchlu kontrolu — ťuknite na zvýraznené nižšie.</item>
+        <item quantity="other">%d účteniek vyžaduje rýchlu kontrolu — ťuknite na zvýraznené nižšie.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">zostáva %d deň</item>
+        <item quantity="few">zostávajú %d dni</item>
+        <item quantity="other">zostáva %d dní</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d deň</item>
+        <item quantity="few">%d dni</item>
+        <item quantity="other">%d dní</item>
+    </plurals>
+</resources>

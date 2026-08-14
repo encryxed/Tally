@@ -42,9 +42,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.encryxed.tally.R
 import com.encryxed.tally.data.Receipt
 import com.encryxed.tally.parse.Category
 import java.io.File
@@ -79,15 +81,15 @@ fun EditScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Edit receipt") },
+                title = { Text(stringResource(R.string.edit_receipt)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.back))
                     }
                 },
                 actions = {
                     IconButton(onClick = { confirmDelete = true }) {
-                        Icon(Icons.Default.Delete, contentDescription = "Delete receipt")
+                        Icon(Icons.Default.Delete, contentDescription = stringResource(R.string.delete_receipt))
                     }
                 },
             )
@@ -117,7 +119,7 @@ fun EditScreen(
                     ) {
                         AsyncImage(
                             model = file,
-                            contentDescription = "Receipt photo",
+                            contentDescription = stringResource(R.string.receipt_photo),
                             contentScale = ContentScale.Crop,
                             modifier = Modifier.fillMaxSize(),
                         )
@@ -129,8 +131,8 @@ fun EditScreen(
             OutlinedTextField(
                 value = merchant,
                 onValueChange = { merchant = it },
-                label = { Text("Store") },
-                placeholder = { Text("Which shop was this?") },
+                label = { Text(stringResource(R.string.field_store)) },
+                placeholder = { Text(stringResource(R.string.field_store_hint)) },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
             )
@@ -139,7 +141,7 @@ fun EditScreen(
             OutlinedTextField(
                 value = totalText,
                 onValueChange = { totalText = it.filter { c -> c.isDigit() || c == '.' || c == ',' } },
-                label = { Text("Total (${receipt.currency})") },
+                label = { Text(stringResource(R.string.field_total, receipt.currency)) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                 modifier = Modifier.fillMaxWidth(),
@@ -150,15 +152,15 @@ fun EditScreen(
                 value = formatDate(date),
                 onValueChange = {},
                 readOnly = true,
-                label = { Text("Date") },
+                label = { Text(stringResource(R.string.field_date)) },
                 trailingIcon = {
-                    TextButton(onClick = { showDatePicker = true }) { Text("Change") }
+                    TextButton(onClick = { showDatePicker = true }) { Text(stringResource(R.string.change)) }
                 },
                 modifier = Modifier.fillMaxWidth(),
             )
             Spacer(Modifier.height(16.dp))
 
-            Text("Category", style = MaterialTheme.typography.labelLarge)
+            Text(stringResource(R.string.field_category), style = MaterialTheme.typography.labelLarge)
             Spacer(Modifier.height(8.dp))
             Row(
                 Modifier.horizontalScroll(rememberScrollState()),
@@ -168,7 +170,7 @@ fun EditScreen(
                     FilterChip(
                         selected = option == category,
                         onClick = { category = option },
-                        label = { Text("${option.emoji} ${option.label}") },
+                        label = { Text("${option.emoji} ${option.localizedLabel()}") },
                     )
                 }
             }
@@ -177,7 +179,7 @@ fun EditScreen(
             OutlinedTextField(
                 value = note,
                 onValueChange = { note = it },
-                label = { Text("Note (optional)") },
+                label = { Text(stringResource(R.string.field_note)) },
                 modifier = Modifier.fillMaxWidth(),
             )
 
@@ -197,7 +199,7 @@ fun EditScreen(
                 enabled = canSave,
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Text("Save changes")
+                Text(stringResource(R.string.save_changes))
             }
             Spacer(Modifier.height(32.dp))
         }
@@ -215,10 +217,10 @@ fun EditScreen(
                         date = Instant.ofEpochMilli(millis).atZone(ZoneOffset.UTC).toLocalDate()
                     }
                     showDatePicker = false
-                }) { Text("OK") }
+                }) { Text(stringResource(R.string.ok)) }
             },
             dismissButton = {
-                TextButton(onClick = { showDatePicker = false }) { Text("Cancel") }
+                TextButton(onClick = { showDatePicker = false }) { Text(stringResource(R.string.cancel)) }
             },
         ) {
             DatePicker(state = state)
@@ -228,16 +230,16 @@ fun EditScreen(
     if (confirmDelete) {
         AlertDialog(
             onDismissRequest = { confirmDelete = false },
-            title = { Text("Delete this receipt?") },
-            text = { Text("The photo will be removed too. This can't be undone.") },
+            title = { Text(stringResource(R.string.delete_confirm_title)) },
+            text = { Text(stringResource(R.string.delete_confirm_body)) },
             confirmButton = {
                 TextButton(onClick = {
                     confirmDelete = false
                     onDelete(receipt)
-                }) { Text("Delete") }
+                }) { Text(stringResource(R.string.delete)) }
             },
             dismissButton = {
-                TextButton(onClick = { confirmDelete = false }) { Text("Cancel") }
+                TextButton(onClick = { confirmDelete = false }) { Text(stringResource(R.string.cancel)) }
             },
         )
     }
@@ -253,8 +255,7 @@ private fun ReviewHint() {
         ),
     ) {
         Text(
-            "Some details couldn't be read from this receipt. Fix them here — " +
-                "the shop name gets remembered for next time.",
+            stringResource(R.string.review_hint),
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.padding(16.dp),
         )

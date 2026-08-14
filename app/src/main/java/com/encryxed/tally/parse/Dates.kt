@@ -2,21 +2,11 @@ package com.encryxed.tally.parse
 
 import java.time.LocalDate
 
-/** Month names across the languages most likely to show up on a till receipt. */
-private val MONTH_NAMES: Map<String, Int> = mapOf(
-    "jan" to 1,
-    "feb" to 2, "fev" to 2,
-    "mar" to 3, "mrt" to 3, "maa" to 3, "mär" to 3,
-    "apr" to 4, "avr" to 4,
-    "may" to 5, "mei" to 5, "mai" to 5, "mag" to 5,
-    "jun" to 6, "giu" to 6,
-    "jul" to 7, "lug" to 7,
-    "aug" to 8, "ago" to 8, "aou" to 8,
-    "sep" to 9, "set" to 9,
-    "oct" to 10, "okt" to 10, "ott" to 10,
-    "nov" to 11,
-    "dec" to 12, "dez" to 12, "dic" to 12,
-)
+/**
+ * Month names for every supported receipt language, used when the caller does
+ * not narrow it down. See [ReceiptLanguage] for the per-language lists.
+ */
+private val ALL_MONTH_NAMES: Map<String, Int> = LanguagePack.ALL.monthPrefixes
 
 // yyyy-mm-dd — unambiguous by construction.
 private val ISO = Regex("""(?<!\d)(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})(?!\d)""")
@@ -50,6 +40,7 @@ fun findDate(
     lines: List<String>,
     preferDayFirst: Boolean,
     today: LocalDate,
+    monthPrefixes: Map<String, Int> = ALL_MONTH_NAMES,
 ): Pair<LocalDate?, Confidence> {
     val candidates = mutableListOf<Candidate>()
 
@@ -84,13 +75,13 @@ fun findDate(
 
         DAY_MONTH_NAME.findAll(line).forEach { m ->
             val (d, name, y) = m.destructured
-            val month = monthFrom(name) ?: return@forEach
+            val month = monthFrom(name, monthPrefixes) ?: return@forEach
             add(safeDate(expandYear(y.toInt(), today), month, d.toInt()), Confidence.HIGH)
         }
 
         MONTH_NAME_DAY.findAll(line).forEach { m ->
             val (name, d, y) = m.destructured
-            val month = monthFrom(name) ?: return@forEach
+            val month = monthFrom(name, monthPrefixes) ?: return@forEach
             add(safeDate(expandYear(y.toInt(), today), month, d.toInt()), Confidence.HIGH)
         }
     }
@@ -114,8 +105,8 @@ private fun resolveOrder(a: Int, b: Int, year: Int, preferDayFirst: Boolean): Lo
     else -> safeDate(year, a, b)
 }
 
-private fun monthFrom(name: String): Int? =
-    MONTH_NAMES[name.lowercase().take(3)]
+private fun monthFrom(name: String, prefixes: Map<String, Int>): Int? =
+    prefixes[name.lowercase().take(3)]
 
 private fun expandYear(year: Int, today: LocalDate): Int = when {
     year >= 100 -> year

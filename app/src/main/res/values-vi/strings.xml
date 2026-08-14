@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Quét hóa đơn</string>
+    <string name="export_csv">Xuất ra CSV</string>
+    <string name="settings">Cài đặt</string>
+    <string name="empty_title">Chưa có hóa đơn nào</string>
+    <string name="empty_body">Hướng máy ảnh vào hóa đơn và Tally sẽ tự điền cửa hàng, ngày và tổng tiền giúp bạn.</string>
+    <string name="watermark">Hoàn toàn mã nguồn mở · tạo bởi @encryxed</string>
+    <string name="tap_to_check">chạm để kiểm tra</string>
+    <string name="no_total">không có tổng</string>
+    <string name="budget_title">Ngân sách chi tiêu</string>
+    <string name="budget_body">Tally sẽ theo dõi số tiền bạn đã tiêu và cảnh báo trước khi bạn vượt quá.</string>
+    <string name="budget_amount">Số tiền (%1$s)</string>
+    <string name="budget_weekly">Hằng tuần</string>
+    <string name="budget_monthly">Hằng tháng</string>
+    <string name="budget_on_track">Vẫn ổn</string>
+    <string name="budget_nearly">Sắp hết</string>
+    <string name="budget_over">Vượt ngân sách</string>
+    <string name="set_budget">Đặt ngân sách</string>
+    <string name="budget_title_short">NGÂN SÁCH</string>
+    <string name="budget_of">trên %1$s</string>
+    <string name="budget_over_summary">vượt %1$s · %2$s</string>
+    <string name="budget_left_summary">còn %1$s · %2$s/ngày trong %3$s</string>
+    <string name="fit_receipt">Đưa toàn bộ hóa đơn vào khung</string>
+    <string name="reading_receipt">Đang đọc hóa đơn…</string>
+    <string name="capture_failed">Chụp không thành công. Hãy thử lại.</string>
+    <string name="camera_start_failed">Không khởi động được máy ảnh.</string>
+    <string name="camera_needed_title">Cần quyền truy cập máy ảnh</string>
+    <string name="camera_needed_body">Tally đọc hóa đơn bằng máy ảnh. Ảnh vẫn nằm trên điện thoại này — ứng dụng hoàn toàn không có quyền truy cập Internet.</string>
+    <string name="camera_denied_body">Tally cần máy ảnh để đọc hóa đơn. Bạn có thể bật trong Cài đặt › Ứng dụng › Tally › Quyền.</string>
+    <string name="allow_camera">Cho phép máy ảnh</string>
+    <string name="go_back">Quay lại</string>
+    <string name="back">Quay lại</string>
+    <string name="ocr_found_nothing">Không đọc được gì. Hãy thử lại với nhiều ánh sáng hơn và toàn bộ hóa đơn trong khung hình.</string>
+    <string name="ocr_failed">Không đọc được ảnh đó.</string>
+    <string name="edit_receipt">Sửa hóa đơn</string>
+    <string name="delete_receipt">Xóa hóa đơn</string>
+    <string name="receipt_photo">Ảnh hóa đơn</string>
+    <string name="field_store">Cửa hàng</string>
+    <string name="field_store_hint">Đây là cửa hàng nào?</string>
+    <string name="field_total">Tổng cộng (%1$s)</string>
+    <string name="field_date">Ngày</string>
+    <string name="field_category">Danh mục</string>
+    <string name="field_note">Ghi chú (tùy chọn)</string>
+    <string name="change">Đổi</string>
+    <string name="save_changes">Lưu thay đổi</string>
+    <string name="review_hint">Một số chi tiết không đọc được từ hóa đơn này. Hãy sửa tại đây — tên cửa hàng sẽ được ghi nhớ cho lần sau.</string>
+    <string name="delete_confirm_title">Xóa hóa đơn này?</string>
+    <string name="delete_confirm_body">Ảnh cũng sẽ bị xóa. Không thể hoàn tác.</string>
+    <string name="saved">Đã lưu</string>
+    <string name="saved_needs_check">Đã lưu — cần kiểm tra</string>
+    <string name="edit">Sửa</string>
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+    <string name="delete">Xóa</string>
+    <string name="remove">Gỡ bỏ</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Tạp hóa</string>
+    <string name="cat_dining">Đồ ăn &amp; thức uống</string>
+    <string name="cat_fuel">Nhiên liệu</string>
+    <string name="cat_transport">Đi lại</string>
+    <string name="cat_health">Sức khỏe &amp; chăm sóc</string>
+    <string name="cat_home">Nhà cửa &amp; sửa chữa</string>
+    <string name="cat_electronics">Điện tử</string>
+    <string name="cat_clothing">Quần áo</string>
+    <string name="cat_entertainment">Giải trí</string>
+    <string name="cat_other">Khác</string>
+    <string name="settings_app_language">Ngôn ngữ ứng dụng</string>
+    <string name="settings_app_language_hint">Ngôn ngữ hiển thị của chính Tally.</string>
+    <string name="settings_system_default">Mặc định của hệ thống</string>
+    <string name="settings_receipt_languages">Ngôn ngữ hóa đơn</string>
+    <string name="settings_receipt_languages_hint">Những từ Tally tìm để xác định tổng tiền và ngày. Hãy bật các ngôn ngữ in trên hóa đơn của bạn — càng nhiều ngôn ngữ thì càng nhiều thứ phải đối chiếu, nên tắt bớt những ngôn ngữ bạn không bao giờ gặp sẽ giúp nhận dạng chính xác hơn một chút.</string>
+    <string name="settings_receipt_languages_none">Hãy chọn ít nhất một, nếu không tổng tiền chỉ có thể đoán.</string>
+    <string name="settings_currency">Tiền tệ</string>
+    <string name="settings_default_currency">Tiền tệ mặc định</string>
+    <string name="settings_currency_hint">Tally đọc loại tiền từ hóa đơn khi được in trên đó. Đây là giá trị dự phòng khi không có — và bạn vẫn có thể đổi trên từng hóa đơn.</string>
+    <string name="settings_date_order">Ngày không rõ ràng</string>
+    <string name="settings_date_order_hint">Một ngày như 03/04 có thể là 4 tháng 3 hoặc 3 tháng 4. Mục này quyết định cách hiểu khi hóa đơn không có manh mối nào khác.</string>
+    <string name="date_order_auto">Theo ngôn ngữ ứng dụng</string>
+    <string name="date_order_day_first">Ngày trước (03/04 = 3 tháng 4)</string>
+    <string name="date_order_month_first">Tháng trước (03/04 = 4 tháng 3)</string>
+    <string name="settings_ocr_note">Nhận dạng văn bản chỉ hỗ trợ chữ Latinh, nên hóa đơn bằng chữ Hy Lạp, Kirin, Trung, Nhật, Hàn hoặc các chữ viết Ấn Độ sẽ không đọc được — dù ứng dụng vẫn có thể hiển thị bằng một số ngôn ngữ đó.</string>
+    <string name="settings_about">Giới thiệu</string>
+    <string name="settings_version">Phiên bản %1$s</string>
+    <string name="settings_source">Mã nguồn và bản phát hành</string>
+    <plurals name="receipt_count">
+        <item quantity="other">%d hóa đơn</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="other">%d hóa đơn cần kiểm tra nhanh — chạm vào mục được đánh dấu bên dưới.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="other">còn %d ngày</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="other">%d ngày</item>
+    </plurals>
+</resources>

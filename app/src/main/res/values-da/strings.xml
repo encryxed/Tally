@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Scan kvittering</string>
+    <string name="export_csv">Eksportér som CSV</string>
+    <string name="settings">Indstillinger</string>
+    <string name="empty_title">Ingen kvitteringer endnu</string>
+    <string name="empty_body">Ret kameraet mod en kvittering, så udfylder Tally butik, dato og beløb for dig.</string>
+    <string name="watermark">Fuldt open source · lavet af @encryxed</string>
+    <string name="tap_to_check">tryk for at tjekke</string>
+    <string name="no_total">intet beløb</string>
+    <string name="budget_title">Forbrugsbudget</string>
+    <string name="budget_body">Tally holder styr på, hvad du har brugt af det, og advarer dig, før du overskrider det.</string>
+    <string name="budget_amount">Beløb (%1$s)</string>
+    <string name="budget_weekly">Ugentligt</string>
+    <string name="budget_monthly">Månedligt</string>
+    <string name="budget_on_track">På sporet</string>
+    <string name="budget_nearly">Tæt på grænsen</string>
+    <string name="budget_over">Over budget</string>
+    <string name="set_budget">Angiv budget</string>
+    <string name="budget_title_short">BUDGET</string>
+    <string name="budget_of">af %1$s</string>
+    <string name="budget_over_summary">%1$s over · %2$s</string>
+    <string name="budget_left_summary">%1$s tilbage · %2$s/dag i %3$s</string>
+    <string name="fit_receipt">Få hele kvitteringen med i rammen</string>
+    <string name="reading_receipt">Læser kvitteringen…</string>
+    <string name="capture_failed">Optagelsen mislykkedes. Prøv igen.</string>
+    <string name="camera_start_failed">Kameraet kunne ikke startes.</string>
+    <string name="camera_needed_title">Der kræves adgang til kameraet</string>
+    <string name="camera_needed_body">Tally læser kvitteringer med kameraet. Billederne bliver på denne telefon — appen har slet ingen internetadgang.</string>
+    <string name="camera_denied_body">Tally har brug for kameraet til at læse kvitteringer. Du kan slå det til under Indstillinger › Apps › Tally › Tilladelser.</string>
+    <string name="allow_camera">Tillad kamera</string>
+    <string name="go_back">Tilbage</string>
+    <string name="back">Tilbage</string>
+    <string name="ocr_found_nothing">Der kunne ikke læses noget. Prøv igen med mere lys og hele kvitteringen i billedet.</string>
+    <string name="ocr_failed">Det billede kunne ikke læses.</string>
+    <string name="edit_receipt">Rediger kvittering</string>
+    <string name="delete_receipt">Slet kvittering</string>
+    <string name="receipt_photo">Foto af kvitteringen</string>
+    <string name="field_store">Butik</string>
+    <string name="field_store_hint">Hvilken butik var det?</string>
+    <string name="field_total">I alt (%1$s)</string>
+    <string name="field_date">Dato</string>
+    <string name="field_category">Kategori</string>
+    <string name="field_note">Note (valgfri)</string>
+    <string name="change">Skift</string>
+    <string name="save_changes">Gem ændringer</string>
+    <string name="review_hint">Nogle oplysninger kunne ikke læses fra denne kvittering. Ret dem her — butikkens navn bliver husket til næste gang.</string>
+    <string name="delete_confirm_title">Slet denne kvittering?</string>
+    <string name="delete_confirm_body">Billedet fjernes også. Det kan ikke fortrydes.</string>
+    <string name="saved">Gemt</string>
+    <string name="saved_needs_check">Gemt — skal tjekkes</string>
+    <string name="edit">Rediger</string>
+    <string name="save">Gem</string>
+    <string name="cancel">Annuller</string>
+    <string name="delete">Slet</string>
+    <string name="remove">Fjern</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Dagligvarer</string>
+    <string name="cat_dining">Mad og drikke</string>
+    <string name="cat_fuel">Brændstof</string>
+    <string name="cat_transport">Transport</string>
+    <string name="cat_health">Sundhed og pleje</string>
+    <string name="cat_home">Hjem og gør det selv</string>
+    <string name="cat_electronics">Elektronik</string>
+    <string name="cat_clothing">Tøj</string>
+    <string name="cat_entertainment">Underholdning</string>
+    <string name="cat_other">Andet</string>
+    <string name="settings_app_language">Appens sprog</string>
+    <string name="settings_app_language_hint">Hvilket sprog Tally selv vises på.</string>
+    <string name="settings_system_default">Systemstandard</string>
+    <string name="settings_receipt_languages">Kvitteringssprog</string>
+    <string name="settings_receipt_languages_hint">Hvilke ord Tally leder efter for at finde beløbet og datoen. Slå de sprog til, som dine kvitteringer er trykt på — flere sprog betyder flere match at prøve, så at slå dem fra, du aldrig ser, gør genkendelsen lidt skarpere.</string>
+    <string name="settings_receipt_languages_none">Vælg mindst ét, ellers kan beløbet kun gættes.</string>
+    <string name="settings_currency">Valuta</string>
+    <string name="settings_default_currency">Standardvaluta</string>
+    <string name="settings_currency_hint">Tally læser valutaen fra kvitteringen, når den står der. Dette bruges, når den ikke gør — og du kan altid ændre den på en enkelt kvittering.</string>
+    <string name="settings_date_order">Tvetydige datoer</string>
+    <string name="settings_date_order_hint">En dato som 03/04 kan være 4. marts eller 3. april. Dette afgør, hvad der antages, når kvitteringen ikke giver andre spor.</string>
+    <string name="date_order_auto">Følg appens sprog</string>
+    <string name="date_order_day_first">Dag først (03/04 = 3. april)</string>
+    <string name="date_order_month_first">Måned først (03/04 = 4. marts)</string>
+    <string name="settings_ocr_note">Tekstgenkendelsen dækker kun latinsk skrift, så kvitteringer på græsk, kyrillisk, kinesisk, japansk, koreansk eller indiske skriftsystemer bliver ikke læst — selvom appen selv kan vises på nogle af de sprog.</string>
+    <string name="settings_about">Om</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_source">Kildekode og udgivelser</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d kvittering</item>
+        <item quantity="other">%d kvitteringer</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d kvittering skal lige tjekkes — tryk på den fremhævede nedenfor.</item>
+        <item quantity="other">%d kvitteringer skal lige tjekkes — tryk på de fremhævede nedenfor.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">%d dag tilbage</item>
+        <item quantity="other">%d dage tilbage</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d dag</item>
+        <item quantity="other">%d dage</item>
+    </plurals>
+</resources>

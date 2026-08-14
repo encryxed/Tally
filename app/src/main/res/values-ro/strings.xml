@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Scanează bonul</string>
+    <string name="export_csv">Exportă ca CSV</string>
+    <string name="settings">Setări</string>
+    <string name="empty_title">Încă niciun bon</string>
+    <string name="empty_body">Îndreaptă camera spre un bon și Tally completează magazinul, data și totalul pentru tine.</string>
+    <string name="watermark">Complet open source · creat de @encryxed</string>
+    <string name="tap_to_check">atinge pentru verificare</string>
+    <string name="no_total">fără total</string>
+    <string name="budget_title">Buget de cheltuieli</string>
+    <string name="budget_body">Tally urmărește cât ai cheltuit din el și te avertizează înainte să îl depășești.</string>
+    <string name="budget_amount">Sumă (%1$s)</string>
+    <string name="budget_weekly">Săptămânal</string>
+    <string name="budget_monthly">Lunar</string>
+    <string name="budget_on_track">Pe drumul cel bun</string>
+    <string name="budget_nearly">Aproape epuizat</string>
+    <string name="budget_over">Buget depășit</string>
+    <string name="set_budget">Stabilește bugetul</string>
+    <string name="budget_title_short">BUGET</string>
+    <string name="budget_of">din %1$s</string>
+    <string name="budget_over_summary">%1$s peste · %2$s</string>
+    <string name="budget_left_summary">%1$s rămași · %2$s/zi timp de %3$s</string>
+    <string name="fit_receipt">Încadrează tot bonul în chenar</string>
+    <string name="reading_receipt">Se citește bonul…</string>
+    <string name="capture_failed">Captura a eșuat. Încearcă din nou.</string>
+    <string name="camera_start_failed">Camera nu a putut porni.</string>
+    <string name="camera_needed_title">Este nevoie de acces la cameră</string>
+    <string name="camera_needed_body">Tally citește bonurile cu camera. Fotografiile rămân pe acest telefon — aplicația nu are deloc acces la internet.</string>
+    <string name="camera_denied_body">Tally are nevoie de cameră pentru a citi bonuri. O poți activa din Setări › Aplicații › Tally › Permisiuni.</string>
+    <string name="allow_camera">Permite camera</string>
+    <string name="go_back">Înapoi</string>
+    <string name="back">Înapoi</string>
+    <string name="ocr_found_nothing">Nu s-a putut citi nimic. Încearcă din nou cu mai multă lumină și cu tot bonul în cadru.</string>
+    <string name="ocr_failed">Imaginea nu a putut fi citită.</string>
+    <string name="edit_receipt">Editează bonul</string>
+    <string name="delete_receipt">Șterge bonul</string>
+    <string name="receipt_photo">Fotografia bonului</string>
+    <string name="field_store">Magazin</string>
+    <string name="field_store_hint">Ce magazin a fost?</string>
+    <string name="field_total">Total (%1$s)</string>
+    <string name="field_date">Dată</string>
+    <string name="field_category">Categorie</string>
+    <string name="field_note">Notă (opțional)</string>
+    <string name="change">Schimbă</string>
+    <string name="save_changes">Salvează modificările</string>
+    <string name="review_hint">Unele detalii nu au putut fi citite de pe acest bon. Corectează-le aici — numele magazinului va fi reținut data viitoare.</string>
+    <string name="delete_confirm_title">Ștergi acest bon?</string>
+    <string name="delete_confirm_body">Fotografia va fi ștearsă și ea. Această acțiune nu poate fi anulată.</string>
+    <string name="saved">Salvat</string>
+    <string name="saved_needs_check">Salvat — necesită verificare</string>
+    <string name="edit">Editează</string>
+    <string name="save">Salvează</string>
+    <string name="cancel">Anulează</string>
+    <string name="delete">Șterge</string>
+    <string name="remove">Elimină</string>
+    <string name="ok">OK</string>
+    <string name="cat_groceries">Alimente</string>
+    <string name="cat_dining">Mâncare și băutură</string>
+    <string name="cat_fuel">Combustibil</string>
+    <string name="cat_transport">Transport</string>
+    <string name="cat_health">Sănătate și îngrijire</string>
+    <string name="cat_home">Casă și bricolaj</string>
+    <string name="cat_electronics">Electronice</string>
+    <string name="cat_clothing">Îmbrăcăminte</string>
+    <string name="cat_entertainment">Divertisment</string>
+    <string name="cat_other">Altele</string>
+    <string name="settings_app_language">Limba aplicației</string>
+    <string name="settings_app_language_hint">În ce limbă este afișată aplicația Tally.</string>
+    <string name="settings_system_default">Implicit din sistem</string>
+    <string name="settings_receipt_languages">Limbile bonurilor</string>
+    <string name="settings_receipt_languages_hint">Ce cuvinte caută Tally pentru a găsi totalul și data. Activează limbile în care sunt tipărite bonurile tale — mai multe limbi înseamnă mai multe potriviri de verificat, așa că dezactivarea celor pe care nu le întâlnești face detectarea puțin mai precisă.</string>
+    <string name="settings_receipt_languages_none">Alege cel puțin una, altfel totalul poate fi doar ghicit.</string>
+    <string name="settings_currency">Monedă</string>
+    <string name="settings_default_currency">Monedă implicită</string>
+    <string name="settings_currency_hint">Tally citește moneda de pe bon când este tipărită acolo. Aceasta este folosită când nu este — și o poți schimba oricând pe un bon anume.</string>
+    <string name="settings_date_order">Date ambigue</string>
+    <string name="settings_date_order_hint">O dată precum 03/04 poate fi 4 martie sau 3 aprilie. Aceasta stabilește ce se presupune când bonul nu oferă alt indiciu.</string>
+    <string name="date_order_auto">Urmează limba aplicației</string>
+    <string name="date_order_day_first">Ziua prima (03/04 = 3 aprilie)</string>
+    <string name="date_order_month_first">Luna prima (03/04 = 4 martie)</string>
+    <string name="settings_ocr_note">Recunoașterea textului acoperă doar alfabetul latin, așa că bonurile în greacă, chirilică, chineză, japoneză, coreeană sau scrieri indiene nu vor fi citite — chiar dacă aplicația însăși poate fi afișată în unele dintre aceste limbi.</string>
+    <string name="settings_about">Despre</string>
+    <string name="settings_version">Versiunea %1$s</string>
+    <string name="settings_source">Cod sursă și versiuni</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d bon</item>
+        <item quantity="few">%d bonuri</item>
+        <item quantity="other">%d de bonuri</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d bon are nevoie de o verificare rapidă — atinge-l pe cel evidențiat mai jos.</item>
+        <item quantity="few">%d bonuri au nevoie de o verificare rapidă — atinge-le pe cele evidențiate mai jos.</item>
+        <item quantity="other">%d de bonuri au nevoie de o verificare rapidă — atinge-le pe cele evidențiate mai jos.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">a mai rămas %d zi</item>
+        <item quantity="few">au mai rămas %d zile</item>
+        <item quantity="other">au mai rămas %d de zile</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d zi</item>
+        <item quantity="few">%d zile</item>
+        <item quantity="other">%d de zile</item>
+    </plurals>
+</resources>

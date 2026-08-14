@@ -19,8 +19,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.encryxed.tally.R
 import com.encryxed.tally.data.Budget
 import com.encryxed.tally.data.BudgetPeriod
 
@@ -41,11 +43,11 @@ fun BudgetDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Spending budget") },
+        title = { Text(stringResource(R.string.budget_title)) },
         text = {
             Column {
                 Text(
-                    "Tally will track what you've spent against this and warn you before you blow past it.",
+                    stringResource(R.string.budget_body),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -56,7 +58,7 @@ fun BudgetDialog(
                         FilterChip(
                             selected = option == period,
                             onClick = { period = option },
-                            label = { Text(option.label) },
+                            label = { Text(option.localizedLabel()) },
                         )
                     }
                 }
@@ -65,7 +67,7 @@ fun BudgetDialog(
                 OutlinedTextField(
                     value = amountText,
                     onValueChange = { amountText = it.filter { c -> c.isDigit() || c == '.' || c == ',' } },
-                    label = { Text("Amount ($currency)") },
+                    label = { Text(stringResource(R.string.budget_amount, currency)) },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     modifier = Modifier.fillMaxWidth(),
@@ -76,14 +78,14 @@ fun BudgetDialog(
             TextButton(
                 onClick = { onSave(Budget(amount ?: 0.0, period)) },
                 enabled = canSave,
-            ) { Text("Save") }
+            ) { Text(stringResource(R.string.save)) }
         },
         dismissButton = {
             Row {
                 if (current != null) {
-                    TextButton(onClick = { onSave(null) }) { Text("Remove") }
+                    TextButton(onClick = { onSave(null) }) { Text(stringResource(R.string.remove)) }
                 }
-                TextButton(onClick = onDismiss) { Text("Cancel") }
+                TextButton(onClick = onDismiss) { Text(stringResource(R.string.cancel)) }
             }
         },
     )

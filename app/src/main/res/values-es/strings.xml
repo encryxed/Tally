@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_receipt">Escanear recibo</string>
+    <string name="export_csv">Exportar como CSV</string>
+    <string name="settings">Ajustes</string>
+    <string name="empty_title">Aún no hay recibos</string>
+    <string name="empty_body">Apunta la cámara a un recibo y Tally rellena la tienda, la fecha y el total por ti.</string>
+    <string name="watermark">Totalmente de código abierto · creado por @encryxed</string>
+    <string name="tap_to_check">toca para revisar</string>
+    <string name="no_total">sin total</string>
+    <string name="budget_title">Presupuesto de gastos</string>
+    <string name="budget_body">Tally seguirá lo que has gastado de él y te avisará antes de que lo superes.</string>
+    <string name="budget_amount">Importe (%1$s)</string>
+    <string name="budget_weekly">Semanal</string>
+    <string name="budget_monthly">Mensual</string>
+    <string name="budget_on_track">Vas bien</string>
+    <string name="budget_nearly">Casi al límite</string>
+    <string name="budget_over">Presupuesto superado</string>
+    <string name="set_budget">Fijar presupuesto</string>
+    <string name="budget_title_short">PRESUPUESTO</string>
+    <string name="budget_of">de %1$s</string>
+    <string name="budget_over_summary">%1$s de más · %2$s</string>
+    <string name="budget_left_summary">%1$s restantes · %2$s/día durante %3$s</string>
+    <string name="fit_receipt">Encaja todo el recibo dentro del marco</string>
+    <string name="reading_receipt">Leyendo el recibo…</string>
+    <string name="capture_failed">Fallo al capturar. Inténtalo de nuevo.</string>
+    <string name="camera_start_failed">No se pudo iniciar la cámara.</string>
+    <string name="camera_needed_title">Se necesita acceso a la cámara</string>
+    <string name="camera_needed_body">Tally lee recibos con la cámara. Las fotos se quedan en este teléfono — la aplicación no tiene ningún acceso a Internet.</string>
+    <string name="camera_denied_body">Tally necesita la cámara para leer recibos. Puedes activarla en Ajustes › Aplicaciones › Tally › Permisos.</string>
+    <string name="allow_camera">Permitir cámara</string>
+    <string name="go_back">Volver</string>
+    <string name="back">Atrás</string>
+    <string name="ocr_found_nothing">No se pudo leer nada. Inténtalo con más luz y con todo el recibo dentro del encuadre.</string>
+    <string name="ocr_failed">No se pudo leer esa imagen.</string>
+    <string name="edit_receipt">Editar recibo</string>
+    <string name="delete_receipt">Eliminar recibo</string>
+    <string name="receipt_photo">Foto del recibo</string>
+    <string name="field_store">Tienda</string>
+    <string name="field_store_hint">¿De qué tienda era?</string>
+    <string name="field_total">Total (%1$s)</string>
+    <string name="field_date">Fecha</string>
+    <string name="field_category">Categoría</string>
+    <string name="field_note">Nota (opcional)</string>
+    <string name="change">Cambiar</string>
+    <string name="save_changes">Guardar cambios</string>
+    <string name="review_hint">Algunos datos no se pudieron leer de este recibo. Corrígelos aquí — el nombre de la tienda se recordará para la próxima vez.</string>
+    <string name="delete_confirm_title">¿Eliminar este recibo?</string>
+    <string name="delete_confirm_body">La foto también se eliminará. Esto no se puede deshacer.</string>
+    <string name="saved">Guardado</string>
+    <string name="saved_needs_check">Guardado — revísalo</string>
+    <string name="edit">Editar</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="remove">Quitar</string>
+    <string name="ok">Aceptar</string>
+    <string name="cat_groceries">Compra</string>
+    <string name="cat_dining">Comida y bebida</string>
+    <string name="cat_fuel">Combustible</string>
+    <string name="cat_transport">Transporte</string>
+    <string name="cat_health">Salud y cuidado</string>
+    <string name="cat_home">Hogar y bricolaje</string>
+    <string name="cat_electronics">Electrónica</string>
+    <string name="cat_clothing">Ropa</string>
+    <string name="cat_entertainment">Ocio</string>
+    <string name="cat_other">Otros</string>
+    <string name="settings_app_language">Idioma de la aplicación</string>
+    <string name="settings_app_language_hint">En qué idioma se muestra Tally.</string>
+    <string name="settings_system_default">Predeterminado del sistema</string>
+    <string name="settings_receipt_languages">Idiomas de los recibos</string>
+    <string name="settings_receipt_languages_hint">Qué palabras busca Tally para encontrar el total y la fecha. Activa los idiomas en los que están impresos tus recibos — más idiomas significa más coincidencias que comprobar, así que desactivar los que nunca ves afina un poco la detección.</string>
+    <string name="settings_receipt_languages_none">Elige al menos uno; de lo contrario el total solo puede adivinarse.</string>
+    <string name="settings_currency">Moneda</string>
+    <string name="settings_default_currency">Moneda predeterminada</string>
+    <string name="settings_currency_hint">Tally lee la moneda del recibo cuando viene impresa. Esto es a lo que recurre cuando no es así — y siempre puedes cambiarla en un recibo concreto.</string>
+    <string name="settings_date_order">Fechas ambiguas</string>
+    <string name="settings_date_order_hint">Una fecha como 03/04 puede ser el 4 de marzo o el 3 de abril. Esto decide qué se supone cuando el recibo no da otra pista.</string>
+    <string name="date_order_auto">Seguir el idioma de la aplicación</string>
+    <string name="date_order_day_first">Día primero (03/04 = 3 de abril)</string>
+    <string name="date_order_month_first">Mes primero (03/04 = 4 de marzo)</string>
+    <string name="settings_ocr_note">El reconocimiento de texto solo cubre el alfabeto latino, así que los recibos en griego, cirílico, chino, japonés, coreano o escrituras índicas no se leerán — aunque la aplicación sí pueda mostrarse en algunos de esos idiomas.</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_version">Versión %1$s</string>
+    <string name="settings_source">Código fuente y versiones</string>
+    <plurals name="receipt_count">
+        <item quantity="one">%d recibo</item>
+        <item quantity="other">%d recibos</item>
+    </plurals>
+    <plurals name="needs_check">
+        <item quantity="one">%d recibo necesita una revisión rápida — toca el resaltado abajo.</item>
+        <item quantity="other">%d recibos necesitan una revisión rápida — toca los resaltados abajo.</item>
+    </plurals>
+    <plurals name="days_left">
+        <item quantity="one">queda %d día</item>
+        <item quantity="other">quedan %d días</item>
+    </plurals>
+    <plurals name="days_span">
+        <item quantity="one">%d día</item>
+        <item quantity="other">%d días</item>
+    </plurals>
+</resources>

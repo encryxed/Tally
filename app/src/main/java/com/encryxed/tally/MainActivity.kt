@@ -1,5 +1,8 @@
 package com.encryxed.tally
 
+import android.app.Activity
+import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -20,18 +23,32 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.encryxed.tally.data.SettingsStore
 import com.encryxed.tally.ui.BudgetDialog
 import com.encryxed.tally.ui.EditScreen
 import com.encryxed.tally.ui.HomeScreen
 import com.encryxed.tally.ui.SavedSummary
 import com.encryxed.tally.ui.ScanScreen
+import com.encryxed.tally.ui.SettingsScreen
 import com.encryxed.tally.ui.buildCsv
 import com.encryxed.tally.ui.formatMoney
 import com.encryxed.tally.ui.primaryCurrency
 import com.encryxed.tally.ui.theme.TallyTheme
 import kotlinx.coroutines.delay
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
+
+    /**
+     * Applies the language chosen in Settings before any resource is read.
+     *
+     * Done by hand rather than through AppCompat because the app is pure
+     * Compose and does not otherwise need an AppCompat theme or activity.
+     */
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(withChosenLocale(newBase))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -43,9 +60,19 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+private fun withChosenLocale(base: Context): Context {
+    val tag = SettingsStore.uiLanguageTag(base) ?: return base
+    val locale = Locale.forLanguageTag(tag)
+    Locale.setDefault(locale)
+    val config = Configuration(base.resources.configuration)
+    config.setLocale(locale)
+    return base.createConfigurationContext(config)
+}
+
 private object Routes {
     const val HOME = "home"
     const val SCAN = "scan"
+    const val SETTINGS = "settings"
     const val EDIT = "edit/{receiptId}"
     fun edit(id: Long) = "edit/$id"
 }
@@ -93,6 +120,26 @@ fun TallyApp(viewModel: TallyViewModel = viewModel()) {
                 onExport = { exportLauncher.launch("tally-receipts.csv") },
                 onEdit = { receipt -> navController.navigate(Routes.edit(receipt.id)) },
                 onEditBudget = { showBudgetDialog = true },
+                onSettings = { navController.navigate(Routes.SETTINGS) },
+            )
+        }
+
+        composable(Routes.SETTINGS) {
+            val settings by viewModel.settings.collectAsStateWithLifecycle()
+            SettingsScreen(
+                settings = settings,
+                versionName = BuildConfig.VERSION_NAME,
+                onUiLanguage = { tag ->
+                    viewModel.setUiLanguage(tag)
+                    // Resources are resolved at activity creation, so the new
+                    // language only takes hold after a restart.
+                    (context as? Activity)?.recreate()
+                },
+                onDefaultCurrency = viewModel::setDefaultCurrency,
+                onReceiptLanguages = viewModel::setReceiptLanguages,
+                onDateOrder = viewModel::setDateOrder,
+                onEditBudget = { showBudgetDialog = true },
+                onBack = { navController.popBackStack() },
             )
         }
 

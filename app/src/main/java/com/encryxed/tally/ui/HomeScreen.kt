@@ -39,12 +39,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import java.io.File
+import com.encryxed.tally.R
 import com.encryxed.tally.data.Budget
 import com.encryxed.tally.data.BudgetProgress
 import com.encryxed.tally.data.Receipt
@@ -61,20 +64,21 @@ fun HomeScreen(
     onExport: () -> Unit,
     onEdit: (Receipt) -> Unit,
     onEditBudget: () -> Unit,
+    onSettings: () -> Unit,
 ) {
     val needingReview = receipts.count { it.needsReview }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Tally", fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.app_name), fontWeight = FontWeight.SemiBold) },
                 actions = {
-                    IconButton(onClick = onEditBudget) {
-                        Icon(Icons.Default.Settings, contentDescription = "Set budget")
+                    IconButton(onClick = onSettings) {
+                        Icon(Icons.Default.Settings, contentDescription = stringResource(R.string.settings))
                     }
                     if (receipts.isNotEmpty()) {
                         IconButton(onClick = onExport) {
-                            Icon(Icons.Default.Share, contentDescription = "Export as CSV")
+                            Icon(Icons.Default.Share, contentDescription = stringResource(R.string.export_csv))
                         }
                     }
                 },
@@ -84,7 +88,7 @@ fun HomeScreen(
             ExtendedFloatingActionButton(
                 onClick = onScan,
                 icon = { Icon(Icons.Default.Add, contentDescription = null) },
-                text = { Text("Scan receipt") },
+                text = { Text(stringResource(R.string.scan_receipt)) },
             )
         },
     ) { padding ->
@@ -175,7 +179,7 @@ private const val PROJECT_URL = "https://github.com/encryxed/Tally"
 private fun Watermark(modifier: Modifier = Modifier) {
     val uriHandler = LocalUriHandler.current
     Text(
-        text = "Fully open source · built by @encryxed",
+        text = stringResource(R.string.watermark),
         style = MaterialTheme.typography.labelSmall,
         color = MaterialTheme.colorScheme.primary,
         textAlign = TextAlign.Center,
@@ -197,8 +201,7 @@ private fun ReviewBanner(count: Int) {
         ),
     ) {
         Text(
-            if (count == 1) "1 receipt needs a quick check — tap the highlighted one below."
-            else "$count receipts need a quick check — tap the highlighted ones below.",
+            pluralStringResource(R.plurals.needs_check, count, count),
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.padding(16.dp),
         )
@@ -242,15 +245,15 @@ private fun BudgetCard(
         Column(Modifier.padding(20.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    "${progress.budget.period.label.uppercase()} BUDGET",
+                    progress.budget.period.localizedLabel().uppercase() + " " + stringResource(R.string.budget_title_short),
                     style = MaterialTheme.typography.labelMedium,
                 )
                 Spacer(Modifier.weight(1f))
                 Text(
                     when {
-                        over -> "Over budget"
-                        nearlyThere -> "Nearly there"
-                        else -> "On track"
+                        over -> stringResource(R.string.budget_over)
+                        nearlyThere -> stringResource(R.string.budget_nearly)
+                        else -> stringResource(R.string.budget_on_track)
                     },
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.SemiBold,
@@ -264,7 +267,7 @@ private fun BudgetCard(
                 fontWeight = FontWeight.Bold,
             )
             Text(
-                "of ${formatMoney(progress.budget.amount, currency)}",
+                stringResource(R.string.budget_of, formatMoney(progress.budget.amount, currency)),
                 style = MaterialTheme.typography.bodyMedium,
             )
 
@@ -289,10 +292,18 @@ private fun BudgetCard(
             val days = progress.budget.daysLeft(progress.today)
             Text(
                 if (over) {
-                    "${formatMoney(-progress.remaining, currency)} over · $days day${if (days == 1L) "" else "s"} left"
+                    stringResource(
+                        R.string.budget_over_summary,
+                        formatMoney(-progress.remaining, currency),
+                        pluralStringResource(R.plurals.days_left, days.toInt(), days.toInt()),
+                    )
                 } else {
-                    "${formatMoney(progress.remaining, currency)} left · " +
-                        "${formatMoney(progress.perDayLeft, currency)}/day for $days day${if (days == 1L) "" else "s"}"
+                    stringResource(
+                        R.string.budget_left_summary,
+                        formatMoney(progress.remaining, currency),
+                        formatMoney(progress.perDayLeft, currency),
+                        pluralStringResource(R.plurals.days_span, days.toInt(), days.toInt()),
+                    )
                 },
                 style = MaterialTheme.typography.bodySmall,
             )
@@ -361,7 +372,7 @@ private fun CategoryBar(
 ) {
     Column {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("${category.emoji} ${category.label}", style = MaterialTheme.typography.bodySmall)
+            Text("${category.emoji} ${category.localizedLabel()}", style = MaterialTheme.typography.bodySmall)
             Spacer(Modifier.weight(1f))
             Text(
                 formatMoney(amount, currency),
@@ -440,8 +451,11 @@ private fun ReceiptRow(receipt: Receipt, onClick: () -> Unit) {
                     overflow = TextOverflow.Ellipsis,
                 )
                 Text(
-                    if (receipt.needsReview) "${formatDate(receipt.date)} · tap to check"
-                    else formatDate(receipt.date),
+                    if (receipt.needsReview) {
+                        formatDate(receipt.date) + " · " + stringResource(R.string.tap_to_check)
+                    } else {
+                        formatDate(receipt.date)
+                    },
                     style = MaterialTheme.typography.bodySmall,
                     color = if (receipt.needsReview) MaterialTheme.colorScheme.error
                     else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -494,13 +508,13 @@ private fun EmptyState(modifier: Modifier = Modifier) {
         Text("🧾", style = MaterialTheme.typography.displayLarge)
         Spacer(Modifier.height(16.dp))
         Text(
-            "No receipts yet",
+            stringResource(R.string.empty_title),
             style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.SemiBold,
         )
         Spacer(Modifier.height(8.dp))
         Text(
-            "Point the camera at a receipt and Tally fills in the shop, date and total for you.",
+            stringResource(R.string.empty_body),
             style = MaterialTheme.typography.bodyMedium,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurfaceVariant,

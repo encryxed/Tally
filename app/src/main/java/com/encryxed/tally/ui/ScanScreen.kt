@@ -48,12 +48,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LocalLifecycleOwner
+import com.encryxed.tally.R
 import java.io.File
 
 @Composable
@@ -67,6 +69,11 @@ fun ScanScreen(
 ) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
+
+    // Resolved up here because the camera callbacks that need them are not
+    // composable and cannot call stringResource themselves.
+    val captureFailedMessage = stringResource(R.string.capture_failed)
+    val cameraStartFailedMessage = stringResource(R.string.camera_start_failed)
 
     var hasPermission by remember {
         mutableStateOf(
@@ -132,7 +139,7 @@ fun ScanScreen(
                             preview,
                             imageCapture,
                         )
-                    }.onFailure { captureError = "Could not start the camera." }
+                    }.onFailure { captureError = cameraStartFailedMessage }
                 }, ContextCompat.getMainExecutor(ctx))
                 previewView
             },
@@ -154,7 +161,7 @@ fun ScanScreen(
                 .clip(CircleShape)
                 .background(Color.Black.copy(alpha = 0.4f)),
         ) {
-            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = Color.White)
+            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.back), tint = Color.White)
         }
 
         Column(
@@ -165,7 +172,7 @@ fun ScanScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                captureError ?: errorMessage ?: "Fit the whole receipt inside the frame",
+                captureError ?: errorMessage ?: stringResource(R.string.fit_receipt),
                 color = Color.White,
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center,
@@ -188,7 +195,7 @@ fun ScanScreen(
                             }
 
                             override fun onError(exception: ImageCaptureException) {
-                                captureError = "Capture failed. Try again."
+                                captureError = captureFailedMessage
                             }
                         },
                     )
@@ -206,7 +213,7 @@ fun ScanScreen(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     CircularProgressIndicator(color = Color.White)
                     Spacer(Modifier.height(16.dp))
-                    Text("Reading the receipt…", color = Color.White)
+                    Text(stringResource(R.string.reading_receipt), color = Color.White)
                 }
             }
         }
@@ -253,7 +260,7 @@ private fun SavedToast(
         ) {
             Column(Modifier.weight(1f)) {
                 Text(
-                    if (summary.needsReview) "Saved — needs a check" else "Saved",
+                    stringResource(if (summary.needsReview) R.string.saved_needs_check else R.string.saved),
                     style = MaterialTheme.typography.labelMedium,
                 )
                 Text(
@@ -262,7 +269,7 @@ private fun SavedToast(
                     fontWeight = FontWeight.SemiBold,
                 )
             }
-            TextButton(onClick = onEdit) { Text("Edit") }
+            TextButton(onClick = onEdit) { Text(stringResource(R.string.edit)) }
         }
     }
 }
@@ -302,21 +309,21 @@ private fun CameraPermissionPrompt(
     ) {
         Text("📷", style = MaterialTheme.typography.displayMedium)
         Spacer(Modifier.height(16.dp))
-        Text("Camera access needed", style = MaterialTheme.typography.headlineSmall)
+        Text(stringResource(R.string.camera_needed_title), style = MaterialTheme.typography.headlineSmall)
         Spacer(Modifier.height(8.dp))
         Text(
             if (wasDenied) {
-                "Tally needs the camera to read receipts. You can enable it in Settings › Apps › Tally › Permissions."
+                stringResource(R.string.camera_denied_body)
             } else {
-                "Tally reads receipts using the camera. Photos stay on this phone — the app has no internet access at all."
+                stringResource(R.string.camera_needed_body)
             },
             style = MaterialTheme.typography.bodyMedium,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Spacer(Modifier.height(24.dp))
-        Button(onClick = onRequest) { Text("Allow camera") }
+        Button(onClick = onRequest) { Text(stringResource(R.string.allow_camera)) }
         Spacer(Modifier.height(8.dp))
-        TextButton(onClick = onBack) { Text("Go back") }
+        TextButton(onClick = onBack) { Text(stringResource(R.string.go_back)) }
     }
 }
